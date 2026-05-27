@@ -3,7 +3,7 @@
 >
 > ```powershell
 > $modulePath = ($env:PSModulePath -split [IO.Path]::PathSeparator)[0]
-> Expand-Archive .\ZeroTrustAssessment-v0.1.0.zip -DestinationPath $modulePath -Force
+> Expand-Archive .\ZeroTrustAssessment-v2.4.0-kodevza.zip -DestinationPath $modulePath -Force
 > Import-Module ZeroTrustAssessment -Force
 > ```
 

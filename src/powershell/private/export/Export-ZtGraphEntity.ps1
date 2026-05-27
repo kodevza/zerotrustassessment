@@ -23,8 +23,8 @@ function Export-ZtGraphEntity {
 		Use this to speciy page-size information, properties to collect or other relevant parameters needed for this to work.
 
 	.PARAMETER QueryStringAppend
-		Additional query information to append to QueryString.
-		Use this for command-line or configuration overrides that should preserve the default export query.
+	Additional query information to append to QueryString.
+	Use this for command-line or configuration overrides that should preserve the default export query.
 
 	.PARAMETER RelatedPropertyNames
 		Additional sub-datasets to retrieve for each entity.
