@@ -43,8 +43,8 @@ jobs:
             default { '${{ github.ref_name }}' }
           }
 
-          if ($tag -notmatch '^v(?<ModuleVersion>\d+\.\d+\.\d+)(?:-(?<Prerelease>[0-9A-Za-z][0-9A-Za-z.-]*))?$') {
-            throw "Release tags must match v<major>.<minor>.<patch> with an optional prerelease suffix, for example v0.1.0 or v2.4.0-kodevza. Received: $tag"
+          if ($tag -notmatch '^v(?<ModuleVersion>\d+\.\d+\.\d+)(?:-(?<Prerelease>[0-9A-Za-z][0-9A-Za-z._-]*))?$') {
+            throw "Release tags must match v<major>.<minor>.<patch> with an optional prerelease suffix, for example v0.1.0, v2.4.0-kodevza, or v2.4.0-memory_gc. Received: $tag"
           }
 
           $version = $Matches.ModuleVersion

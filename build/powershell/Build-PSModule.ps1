@@ -37,8 +37,8 @@
 Import-Module "$PSScriptRoot\CommonFunctions.psm1" -Force -WarningAction SilentlyContinue -ErrorAction Stop
 
 if ($ReleaseVersion) {
-    if ($ReleaseVersion -notmatch '^(?<ModuleVersion>\d+\.\d+\.\d+)(?:-(?<Prerelease>[0-9A-Za-z][0-9A-Za-z.-]*))?$') {
-        throw "ReleaseVersion must match <major>.<minor>.<patch> with an optional prerelease suffix, for example 0.1.0 or 2.4.0-kodevza. Received: $ReleaseVersion"
+    if ($ReleaseVersion -notmatch '^(?<ModuleVersion>\d+\.\d+\.\d+)(?:-(?<Prerelease>[0-9A-Za-z][0-9A-Za-z._-]*))?$') {
+        throw "ReleaseVersion must match <major>.<minor>.<patch> with an optional prerelease suffix, for example 0.1.0, 2.4.0-kodevza, or 2.4.0-memory_gc. Received: $ReleaseVersion"
     }
 
     $moduleVersion = $Matches.ModuleVersion
