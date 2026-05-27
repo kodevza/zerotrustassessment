@@ -111,6 +111,23 @@ Describe "Export-ZtGraphEntity" {
 
             Should -Invoke -ModuleName ZeroTrustAssessment -CommandName Invoke-ZtGraphBatchRequest -Times 1 -Exactly
         }
+
+        It "Releases exported page values after writing the page" {
+            $script:page = @{
+                value = @(
+                    @{ id = 'sp-1'; displayName = 'TestSP1' },
+                    @{ id = 'sp-2'; displayName = 'TestSP2' }
+                )
+            }
+            Mock -ModuleName ZeroTrustAssessment Invoke-ZtRetry { return $script:page }
+            Mock -ModuleName ZeroTrustAssessment Invoke-ZtGraphBatchRequest {}
+
+            Export-ZtGraphEntity -Name 'ServicePrincipal' -Uri 'beta/servicePrincipals' `
+                -QueryString '$top=999' `
+                -ExportPath $script:exportPath
+
+            $script:page.ContainsKey('value') | Should -BeFalse
+        }
     }
 
     Context "QueryStringAppend — tag filter is applied to application queries" {
