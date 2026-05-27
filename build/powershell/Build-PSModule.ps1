@@ -37,17 +37,19 @@
 Import-Module "$PSScriptRoot\CommonFunctions.psm1" -Force -WarningAction SilentlyContinue -ErrorAction Stop
 
 if ($ReleaseVersion) {
-    if ($ReleaseVersion -notmatch '^\d+\.\d+\.\d+$') {
-        throw "ReleaseVersion must match <major>.<minor>.<patch>, for example 0.1.0. Received: $ReleaseVersion"
+    if ($ReleaseVersion -notmatch '^(?<ModuleVersion>\d+\.\d+\.\d+)(?:-(?<Prerelease>[0-9A-Za-z][0-9A-Za-z.-]*))?$') {
+        throw "ReleaseVersion must match <major>.<minor>.<patch> with an optional prerelease suffix, for example 0.1.0 or 2.4.0-kodevza. Received: $ReleaseVersion"
     }
 
+    $moduleVersion = $Matches.ModuleVersion
+    $prerelease = if ($Matches.Prerelease) { $Matches.Prerelease } else { '' }
     $manifestPath = Get-PathInfo ".\src\powershell\*.psd1" -DefaultFilename "*.psd1" -ErrorAction Stop | Select-Object -Last 1
     $publicScripts = @(Get-ChildItem -Path ".\src\powershell\public" -Recurse -Filter "*.ps1")
     $functionNames = @($publicScripts.BaseName | Sort-Object)
 
     Update-Metadata -Path $manifestPath.FullName -PropertyName FunctionsToExport -Value $functionNames
-    Update-Metadata -Path $manifestPath.FullName -PropertyName ModuleVersion -Value $ReleaseVersion
-    Update-Metadata -Path $manifestPath.FullName -PropertyName Prerelease -Value ''
+    Update-Metadata -Path $manifestPath.FullName -PropertyName ModuleVersion -Value $moduleVersion
+    Update-Metadata -Path $manifestPath.FullName -PropertyName Prerelease -Value $prerelease
 } else {
     ## Increment the build number
     &$PSScriptRoot\Set-Version.ps1 -preview:(!$ProductionBuild)

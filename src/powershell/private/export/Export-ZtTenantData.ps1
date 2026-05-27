@@ -34,6 +34,11 @@ function Export-ZtTenantData {
 		Use only query parameters that are valid for every exported endpoint in scope.
 		Do not include the leading '?' or '&'.
 
+	.PARAMETER ExportTagContains
+		Optional tag prefix to filter tag-aware Graph entity exports by.
+		Microsoft Graph tag filters support startsWith, not contains.
+		This currently applies to Application and ServicePrincipal exports.
+
 	.EXAMPLE
 		PS C:\> Export-ZtTenantData -ExportPath $exportPath -Days $Days -MaximumSignInLogQueryTime $MaximumSignInLogQueryTime -Pillar $Pillar
 
@@ -62,6 +67,9 @@ function Export-ZtTenantData {
 		$ExportQueryStringAppend,
 
 		[string]
+		$ExportTagContains,
+
+		[string]
 		$LogsPath
 	)
 
@@ -86,6 +94,18 @@ function Export-ZtTenantData {
 
 		"$dateFilter and $statusFilter and appid eq '89bee1f7-5e6e-4d8a-9f3d-ecd601259da7'" # 89bee1f7-5e6e-4d8a-9f3d-ecd601259da7 -> Office365 Shell WCSS-Client
 	}
+
+	function New-ZtiTagStartsWithFilterQuery {
+		[CmdletBinding()]
+		param (
+			[Parameter(Mandatory = $true)]
+			[string]
+			$TagText
+		)
+
+		$escapedTagText = $TagText.Replace("'", "''")
+		"`$filter=tags/any(t:startswith(t, '$escapedTagText'))"
+	}
 	#endregion Helper Functions
 
 	$entraIDPlan = Get-ZtLicenseInformation -Product EntraID
@@ -109,6 +129,9 @@ function Export-ZtTenantData {
 		Write-PSFMessage -Level Warning -Message "Unexpected Export Variable: %$_%. This is likely a bug, please report this here: https://github.com/microsoft/zerotrustassessment/issues"
 		"%$_%"
 	})
+
+	$tagFilterExportNames = @('Application', 'ServicePrincipal')
+	$tagFilterQueryString = if ($ExportTagContains) { New-ZtiTagStartsWithFilterQuery -TagText $ExportTagContains }
 
 	$exportConfigPath = Join-Path $script:ModuleRoot 'assets' 'export-tenant.config.psd1'
 	Write-PSFMessage "Checking applicable exports for the current configuration... $exportConfigPath"
@@ -147,6 +170,11 @@ https://github.com/microsoft/zerotrustassessment/issues
 		if ($ExportQueryStringAppend) {
 			$exportCfg.QueryStringAppend = $ExportQueryStringAppend
 			Write-PSFMessage -Level Verbose -Message "Appending export query string from command line to '{0}'." -StringValues $exportCfg.Name -Tag Export, config
+		}
+
+		if ($tagFilterQueryString -and $exportCfg.Name -in $tagFilterExportNames) {
+			$exportCfg.QueryStringAppend = @($exportCfg.QueryStringAppend, $tagFilterQueryString).Where({ $_ }) -join '&'
+			Write-PSFMessage -Level Verbose -Message "Filtering export '{0}' by tag text." -StringValues $exportCfg.Name -Tag Export, config
 		}
 
 		$exportCfg

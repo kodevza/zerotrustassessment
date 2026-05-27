@@ -20,7 +20,7 @@ Describe "Export-ZtGraphEntity" {
 
     Context "Add-GraphProperty — guard skips batch when page is empty" {
         BeforeAll {
-            $script:exportPath = Join-Path $env:TEMP "zt-test-graphentity-$(Get-Random)"
+            $script:exportPath = Join-Path ([System.IO.Path]::GetTempPath()) "zt-test-graphentity-$(Get-Random)"
             New-Item -ItemType Directory -Path $script:exportPath -Force | Out-Null
         }
 
@@ -110,6 +110,41 @@ Describe "Export-ZtGraphEntity" {
                 -ExportPath $script:exportPath
 
             Should -Invoke -ModuleName ZeroTrustAssessment -CommandName Invoke-ZtGraphBatchRequest -Times 1 -Exactly
+        }
+    }
+
+    Context "QueryStringAppend — tag filter is applied to application queries" {
+        BeforeAll {
+            $script:exportPath = Join-Path ([System.IO.Path]::GetTempPath()) "zt-test-graphentity-tag-$(Get-Random)"
+            New-Item -ItemType Directory -Path $script:exportPath -Force | Out-Null
+        }
+
+        AfterAll {
+            Remove-Item $script:exportPath -Recurse -Force -ErrorAction SilentlyContinue
+        }
+
+        BeforeEach {
+            $script:requestedUris = @()
+
+            Mock -ModuleName ZeroTrustAssessment Get-ZtConfig            { return $false }
+            Mock -ModuleName ZeroTrustAssessment Set-ZtConfig            {}
+            Mock -ModuleName ZeroTrustAssessment Update-ZtProgressState  {}
+            Mock -ModuleName ZeroTrustAssessment Get-PSFConfigValue      { return 1073741824 }
+            Mock -ModuleName ZeroTrustAssessment Invoke-ZtRetry          { & $ScriptBlock }
+            Mock -ModuleName ZeroTrustAssessment Invoke-MgGraphRequest   {
+                $script:requestedUris += $Uri
+                return @{ value = @() }
+            }
+        }
+
+        It "Queries applications with the tag filter appended to the default query string" {
+            Export-ZtGraphEntity -Name 'Application' -Uri 'beta/applications' `
+                -QueryString '$top=999' `
+                -QueryStringAppend '$filter=tags/any(t:startswith(t, ''NetworkAccess''))' `
+                -ExportPath $script:exportPath
+
+            $script:requestedUris | Should -HaveCount 1
+            $script:requestedUris[0] | Should -Be "beta/applications?`$top=999&`$filter=tags/any(t:startswith(t, 'NetworkAccess'))"
         }
     }
 }
