@@ -46,6 +46,16 @@ Raising this number may improve performance, but risk hitting throttling limits.
 Maximum number of tests processed in parallel.
 Raising this number may improve performance, but risk hitting throttling limits.
 
+.PARAMETER ExportQueryStringAppend
+Optional. Appends query string parameters to each Graph entity export.
+Use only query parameters that are valid for every exported endpoint in scope.
+The value should not include the leading '?' or '&'.
+
+.PARAMETER ExportTagContains
+Optional. Limits tag-aware Graph entity exports to items where any tag starts with the provided text.
+Microsoft Graph tag filters support startsWith, not contains.
+This currently applies to Application and ServicePrincipal exports.
+
 .PARAMETER Timeout
 	The maximum time to wait for all tests to complete before giving up and writing a warning message.
 	Defaults to: 24 hours. Adjust this value if you have a large number of tests or expect some tests to take a long time.
@@ -88,6 +98,11 @@ Run the Zero Trust Assessment using settings from a configuration file.
 Invoke-ZtAssessment -ConfigurationFile "C:\Config\zt-config.json" -Days 14 -ShowLog
 
 Run the Zero Trust Assessment using settings from a configuration file, but override the Days parameter to 14 and enable ShowLog.
+
+.EXAMPLE
+Invoke-ZtAssessment -ExportTagContains "MyTag"
+
+Run the Zero Trust Assessment and limit Application and ServicePrincipal exports to items with a tag starting with "MyTag".
 
 .EXAMPLE
 Invoke-ZeroTrustAssessment -Pillar Identity
@@ -186,6 +201,16 @@ function Invoke-ZtAssessment {
 		# operations cannot be deterministically hard-stopped from within the current process.
 		[int]
 		$TestTimeout = [math]::Floor((Get-PSFConfigValue -FullName 'ZeroTrustAssessment.Tests.Timeout' -Fallback ([timespan]::FromMinutes(60))).TotalMinutes),
+
+		# Optional query string fragment to append to every Graph entity export. Do not include the leading '?' or '&'.
+		[Parameter(ParameterSetName = 'Default')]
+		[string]
+		$ExportQueryStringAppend,
+
+		# Optional tag prefix to filter tag-aware Graph entity exports by.
+		[Parameter(ParameterSetName = 'Default')]
+		[string]
+		$ExportTagContains,
 
 		# If specified, suppresses automatic browser opening for both the progress dashboard and the final HTML report.
 		[Parameter(ParameterSetName = 'Default')]
@@ -287,7 +312,7 @@ $titleLine
 			$configContent = Get-Content -Path $ConfigurationFile -Raw | ConvertFrom-Json
 
 			# Define parameters that can be configured
-			$configurableParameters = @('Path', 'Days', 'MaximumSignInLogQueryTime', 'ShowLog', 'ExportLog', 'DisableTelemetry', 'Resume', 'Tests', 'TestTimeout')
+			$configurableParameters = @('Path', 'Days', 'MaximumSignInLogQueryTime', 'ShowLog', 'ExportLog', 'DisableTelemetry', 'Resume', 'Tests', 'TestTimeout', 'ExportQueryStringAppend', 'ExportTagContains')
 
 			# Apply configuration values only if parameters weren't explicitly provided
 			foreach ($paramName in $configurableParameters) {
@@ -523,7 +548,7 @@ $titleLine
 
 	Write-PSFMessage -Message "Stage 1: Exporting Tenant Data" -Tag stage
 	Update-ZtProgressState -Stage 'export' -StageNumber 1 -StageName 'Exporting Tenant Data'
-	Export-ZtTenantData -ExportPath $exportPath -Days $Days -MaximumSignInLogQueryTime $MaximumSignInLogQueryTime -Pillar $Pillar -ThrottleLimit $ExportThrottleLimit -LogsPath $logsPath
+	Export-ZtTenantData -ExportPath $exportPath -Days $Days -MaximumSignInLogQueryTime $MaximumSignInLogQueryTime -Pillar $Pillar -ThrottleLimit $ExportThrottleLimit -LogsPath $logsPath -ExportQueryStringAppend $ExportQueryStringAppend -ExportTagContains $ExportTagContains
 
 	Update-ZtProgressState -Stage 'database' -StageNumber 1 -StageName 'Importing Data into Database' -ClearWorkers
 	$database = Export-Database -ExportPath $exportPath -Pillar $Pillar -LogsPath $logsPath
