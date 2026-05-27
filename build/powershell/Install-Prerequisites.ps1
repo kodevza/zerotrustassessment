@@ -4,8 +4,6 @@ param (
 	$Repository = 'PSGallery'
 )
 
-Invoke-WebRequest 'https://raw.githubusercontent.com/PowershellFrameworkCollective/PSFramework.NuGet/refs/heads/master/bootstrap.ps1' | Invoke-Expression
-
 $modules = @(
 	"Pester" # Test Framework, runs the tests
 	"PSScriptAnalyzer" # PowerShell Best Practices analyzer, will be used in tests
@@ -30,4 +28,24 @@ foreach ($dependency in $data.RequiredModules) {
 	}
 }
 
-Install-PSFModule -Name $modules
+$modules = @($modules | Sort-Object -Unique)
+$missingModules = @($modules | Where-Object { -not (Get-Module -Name $_ -ListAvailable) })
+
+if (-not $missingModules) {
+	Write-Host "All prerequisite modules are already available."
+	return
+}
+
+$installPSResource = Get-Command -Name Install-PSResource -ErrorAction SilentlyContinue
+if ($installPSResource) {
+	Install-PSResource -Name $missingModules -Repository $Repository -Scope CurrentUser -TrustRepository -AcceptLicense -Quiet -ErrorAction Stop
+	return
+}
+
+$installModule = Get-Command -Name Install-Module -ErrorAction SilentlyContinue
+if ($installModule) {
+	Install-Module -Name $missingModules -Repository $Repository -Scope CurrentUser -Force -SkipPublisherCheck -AcceptLicense -ErrorAction Stop
+	return
+}
+
+throw "Neither Install-PSResource nor Install-Module is available. Install Microsoft.PowerShell.PSResourceGet or PowerShellGet first."
