@@ -255,6 +255,77 @@ function Export-ZtGraphEntity {
 			$valueProperty.Value = $null
 		}
 	}
+
+	function Get-GraphErrorCode {
+		[CmdletBinding()]
+		param (
+			$InputObject
+		)
+
+		if (-not $InputObject) {
+			return $null
+		}
+
+		if ($InputObject -is [System.Management.Automation.ErrorRecord]) {
+			$exception = $InputObject.Exception
+			while ($exception) {
+				if ($exception.Data -and $exception.Data.Contains('GraphErrorCode')) {
+					return $exception.Data['GraphErrorCode']
+				}
+				if ($exception.PSObject.Properties['Error'] -and $exception.Error -and $exception.Error.PSObject.Properties['Code']) {
+					return $exception.Error.Code
+				}
+				if ($exception.Message -match 'DirectoryPageTokenNotFoundException') {
+					return 'DirectoryPageTokenNotFoundException'
+				}
+				$exception = $exception.InnerException
+			}
+			return $null
+		}
+
+		if ($InputObject -is [System.Collections.IDictionary]) {
+			if ($InputObject.Contains('error') -and $InputObject.error) {
+				return $InputObject.error.code
+			}
+			return $null
+		}
+
+		if ($InputObject.PSObject.Properties['error'] -and $InputObject.error) {
+			return $InputObject.error.code
+		}
+
+		return $null
+	}
+
+	function Test-DirectoryPageTokenNotFound {
+		[CmdletBinding()]
+		param (
+			$InputObject
+		)
+
+		(Get-GraphErrorCode -InputObject $InputObject) -eq 'DirectoryPageTokenNotFoundException'
+	}
+
+	function New-GraphApiErrorRecord {
+		[CmdletBinding()]
+		param (
+			[string]
+			$ErrorCode,
+
+			[string]
+			$ErrorMessage
+		)
+
+		$exception = New-Object System.Exception("API returned error for '$Name': [$ErrorCode] $ErrorMessage")
+		$exception.Data['GraphErrorCode'] = $ErrorCode
+		$exception.Data['GraphErrorMessage'] = $ErrorMessage
+		[System.Management.Automation.ErrorRecord]::new(
+			$exception,
+			$ErrorCode,
+			[System.Management.Automation.ErrorCategory]::InvalidOperation,
+			$null
+		)
+	}
 	#endregion Utility Functions
 
 	$pageIndex = 0
@@ -272,90 +343,112 @@ function Export-ZtGraphEntity {
 	$startTime = Get-Date
 	$stopTime = $startTime.AddMinutes($MaximumQueryTime)
 	$hasTimeLimit = $MaximumQueryTime -gt 0
-	$previousNextLink = $null
+	$initialUri = $actualUri
+	$directoryPageTokenRestartCount = 0
+	$maxDirectoryPageTokenRestarts = Get-PSFConfigValue -FullName 'ZeroTrustAssessment.Export.Graph.DirectoryPageTokenMaxRestarts' -Fallback 1
 
-	do {
-		# Update progress detail with the Graph API endpoint and page number
-		if ($pageIndex -eq 0) {
-			Update-ZtProgressState -WorkerId $Name -WorkerName $Name -WorkerStatus 'Running' -WorkerDetail "GET $Uri"
-		}
-		else {
-			Update-ZtProgressState -WorkerId $Name -WorkerName $Name -WorkerStatus 'Running' -WorkerDetail "GET $Uri — page $($pageIndex + 1)"
-		}
+	while ($true) {
+		$pageIndex = 0
+		$totalSize = 0
+		$actualUri = $initialUri
+		$previousNextLink = $null
 
-		$results = $null
 		try {
-			$results = Invoke-ZtRetry -ScriptBlock { Invoke-MgGraphRequest -Method GET -Uri $actualUri -OutputType HashTable }
-		}
-		catch {
-			Write-PSFMessage -Level Warning "Export '$Name' failed on page $pageIndex. URI: $actualUri" -ErrorRecord $_ -Tag Export, Error
-			throw
-		}
+			do {
+				# Update progress detail with the Graph API endpoint and page number
+				if ($pageIndex -eq 0) {
+					Update-ZtProgressState -WorkerId $Name -WorkerName $Name -WorkerStatus 'Running' -WorkerDetail "GET $Uri"
+				}
+				else {
+					Update-ZtProgressState -WorkerId $Name -WorkerName $Name -WorkerStatus 'Running' -WorkerDetail "GET $Uri — page $($pageIndex + 1)"
+				}
 
-		# Validate response - API may return error JSON as a valid hashtable without throwing
-		if ($results -is [hashtable] -and $results.ContainsKey('error')) {
-			$errorCode = $results.error.code
-			$errorMessage = $results.error.message
-			Write-PSFMessage -Level Warning "API returned error response for '$Name' page ${pageIndex}: [$errorCode] $errorMessage" -Tag Export, Error
-			# Throw a structured error so callers can inspect error code/category
-			$exception = New-Object System.Exception("API returned error for '$Name': [$errorCode] $errorMessage")
-			$exception.Data['GraphErrorCode'] = $errorCode
-			$exception.Data['GraphErrorMessage'] = $errorMessage
-			$errorRecord = New-Object System.Management.Automation.ErrorRecord `
-				$exception, `
-				$errorCode, `
-				[System.Management.Automation.ErrorCategory]::InvalidOperation, `
-				$null
-			throw $errorRecord
-		}
+				$results = $null
+				try {
+					$results = Invoke-ZtRetry -ScriptBlock { Invoke-MgGraphRequest -Method GET -Uri $actualUri -OutputType HashTable }
+				}
+				catch {
+					if (Test-DirectoryPageTokenNotFound -InputObject $_) {
+						throw
+					}
 
-		$nextLink = if ($results) { $results.'@odata.nextLink' } else { $null }
-		try {
-			Export-Page -PageIndex $pageIndex -Path $folderPath -Results $results -RelatedPropertyNames $RelatedPropertyNames -Name $Name -Uri $Uri
+					Write-PSFMessage -Level Warning "Export '$Name' failed on page $pageIndex. URI: $actualUri" -ErrorRecord $_ -Tag Export, Error
+					throw
+				}
 
-			# Track file size for SignIn logs
-			if ($isSignInLog) {
-				$lastFile = Join-Path -Path $folderPath -ChildPath "$Name-$pageIndex.json"
-				if (Test-Path $lastFile) {
-					$fileSize = (Get-Item $lastFile).Length
-					$totalSize += $fileSize
+				# Validate response - API may return error JSON as a valid hashtable without throwing
+				if ($results -is [hashtable] -and $results.ContainsKey('error')) {
+					$errorCode = $results.error.code
+					$errorMessage = $results.error.message
+					Write-PSFMessage -Level Warning "API returned error response for '$Name' page ${pageIndex}: [$errorCode] $errorMessage" -Tag Export, Error
+					throw (New-GraphApiErrorRecord -ErrorCode $errorCode -ErrorMessage $errorMessage)
+				}
 
-					if ($totalSize -gt $maxSizeBytes) {
-						$sizeMB = [math]::Round($totalSize / 1MB, 2)
-						$limitMB = [math]::Round($maxSizeBytes / 1MB, 2)
-						Write-PSFMessage -Level Warning "Sign-in log export reached size limit of $limitMB MB (current: $sizeMB MB). Stopping export and continuing with next task." -Tag Export, SignIn, SizeLimit
-						Write-Host "⚠️ " -NoNewline -ForegroundColor Yellow
-						Write-Host "Sign-in log export reached the 1GB size limit ($sizeMB MB collected). Continuing with remaining exports..." -ForegroundColor Yellow
-						break
+				$nextLink = if ($results) { $results.'@odata.nextLink' } else { $null }
+				try {
+					Export-Page -PageIndex $pageIndex -Path $folderPath -Results $results -RelatedPropertyNames $RelatedPropertyNames -Name $Name -Uri $Uri
+
+					# Track file size for SignIn logs
+					if ($isSignInLog) {
+						$lastFile = Join-Path -Path $folderPath -ChildPath "$Name-$pageIndex.json"
+						if (Test-Path $lastFile) {
+							$fileSize = (Get-Item $lastFile).Length
+							$totalSize += $fileSize
+
+							if ($totalSize -gt $maxSizeBytes) {
+								$sizeMB = [math]::Round($totalSize / 1MB, 2)
+								$limitMB = [math]::Round($maxSizeBytes / 1MB, 2)
+								Write-PSFMessage -Level Warning "Sign-in log export reached size limit of $limitMB MB (current: $sizeMB MB). Stopping export and continuing with next task." -Tag Export, SignIn, SizeLimit
+								Write-Host "⚠️ " -NoNewline -ForegroundColor Yellow
+								Write-Host "Sign-in log export reached the 1GB size limit ($sizeMB MB collected). Continuing with remaining exports..." -ForegroundColor Yellow
+								break
+							}
+						}
 					}
 				}
+				finally {
+					Clear-GraphPagePayload -Results $results
+					$results = $null
+				}
+
+				$actualUri = $nextLink
+				$pageIndex++
+
+				if (-not $actualUri) {
+					break
+				}
+
+				# Detect stuck paging - same nextLink returned consecutively
+				if ($actualUri -eq $previousNextLink) {
+					Write-PSFMessage -Level Warning "Stuck paging detected for '$Name': nextLink unchanged on page $pageIndex. Stopping export." -Tag Export, Error
+					throw "Stuck paging detected for '$Name': nextLink unchanged on page $pageIndex"
+				}
+				$previousNextLink = $actualUri
+
+				if ($hasTimeLimit -and (Get-Date) -gt $stopTime) {
+					Write-PSFMessage "Maximum time limit reached for $Name"
+					break
+				}
 			}
-		}
-		finally {
-			Clear-GraphPagePayload -Results $results
-			$results = $null
-		}
+			while ($true)
 
-		$actualUri = $nextLink
-		$pageIndex++
-
-		if (-not $actualUri) {
 			break
 		}
+		catch {
+			if (-not (Test-DirectoryPageTokenNotFound -InputObject $_)) {
+				throw
+			}
 
-		# Detect stuck paging - same nextLink returned consecutively
-		if ($actualUri -eq $previousNextLink) {
-			Write-PSFMessage -Level Warning "Stuck paging detected for '$Name': nextLink unchanged on page $pageIndex. Stopping export." -Tag Export, Error
-			throw "Stuck paging detected for '$Name': nextLink unchanged on page $pageIndex"
-		}
-		$previousNextLink = $actualUri
+			if ($directoryPageTokenRestartCount -ge $maxDirectoryPageTokenRestarts) {
+				Write-PSFMessage -Level Warning "Export '$Name' failed after $directoryPageTokenRestartCount restart(s) caused by DirectoryPageTokenNotFoundException." -ErrorRecord $_ -Tag Export, Error
+				throw
+			}
 
-		if ($hasTimeLimit -and (Get-Date) -gt $stopTime) {
-			Write-PSFMessage "Maximum time limit reached for $Name"
-			break
+			$directoryPageTokenRestartCount++
+			Write-PSFMessage -Level Warning "Export '$Name' encountered DirectoryPageTokenNotFoundException on page $pageIndex. Restarting the entity export from the first page (restart $directoryPageTokenRestartCount of $maxDirectoryPageTokenRestarts)." -ErrorRecord $_ -Tag Export, Retry, Graph
+			Clear-ZtFolder -Path $folderPath
 		}
 	}
-	while ($true)
 
 	Set-ZtConfig -ExportPath $ExportPath -Property $Name -Value $true
 }

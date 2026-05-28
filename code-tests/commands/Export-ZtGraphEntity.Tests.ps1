@@ -128,6 +128,136 @@ Describe "Export-ZtGraphEntity" {
 
             $script:page.ContainsKey('value') | Should -BeFalse
         }
+
+        It "Restarts the entity export when Graph reports an expired directory page token" {
+            $script:requestedUris = @()
+            $script:call = 0
+
+            Mock -ModuleName ZeroTrustAssessment Get-PSFConfigValue {
+                if ($FullName -eq 'ZeroTrustAssessment.Export.Graph.DirectoryPageTokenMaxRestarts') {
+                    return 1
+                }
+                return 1073741824
+            }
+            Mock -ModuleName ZeroTrustAssessment Invoke-ZtRetry { & $ScriptBlock }
+            Mock -ModuleName ZeroTrustAssessment Invoke-MgGraphRequest {
+                $script:call++
+                $script:requestedUris += $Uri
+
+                if ($script:call -eq 1) {
+                    return @{
+                        value             = @(@{ id = 'stale-page-1'; displayName = 'Stale page' })
+                        '@odata.nextLink' = 'beta/servicePrincipals?$skiptoken=expired'
+                    }
+                }
+
+                if ($script:call -eq 2) {
+                    return @{
+                        error = @{
+                            code    = 'DirectoryPageTokenNotFoundException'
+                            message = 'The directory page token was not found.'
+                        }
+                    }
+                }
+
+                if ($script:call -eq 3) {
+                    return @{
+                        value             = @(@{ id = 'fresh-page-1'; displayName = 'Fresh page' })
+                        '@odata.nextLink' = 'beta/servicePrincipals?$skiptoken=fresh'
+                    }
+                }
+
+                return @{
+                    value = @(@{ id = 'fresh-page-2'; displayName = 'Fresh second page' })
+                }
+            }
+
+            Export-ZtGraphEntity -Name 'ServicePrincipal' -Uri 'beta/servicePrincipals' `
+                -QueryString '$top=999' `
+                -ExportPath $script:exportPath
+
+            $script:requestedUris | Should -Be @(
+                'beta/servicePrincipals?$top=999'
+                'beta/servicePrincipals?$skiptoken=expired'
+                'beta/servicePrincipals?$top=999'
+                'beta/servicePrincipals?$skiptoken=fresh'
+            )
+
+            $outputFiles = @(Get-ChildItem -Path (Join-Path $script:exportPath 'ServicePrincipal') -Filter '*.json' -File | Sort-Object Name)
+            $outputFiles | Should -HaveCount 2
+
+            $firstPage = Get-Content -Path $outputFiles[0].FullName -Raw | ConvertFrom-Json -AsHashtable
+            $secondPage = Get-Content -Path $outputFiles[1].FullName -Raw | ConvertFrom-Json -AsHashtable
+            $firstPage.value[0].id | Should -Be 'fresh-page-1'
+            $secondPage.value[0].id | Should -Be 'fresh-page-2'
+        }
+    }
+
+    Context "Privileged group export — streams member output" {
+        BeforeAll {
+            $script:privilegedGroupExportPath = Join-Path ([System.IO.Path]::GetTempPath()) "zt-test-privilegedgroup-$(Get-Random)"
+            $script:roleAssignmentPath = Join-Path $script:privilegedGroupExportPath 'RoleAssignment'
+            New-Item -ItemType Directory -Path $script:roleAssignmentPath -Force | Out-Null
+        }
+
+        AfterAll {
+            Remove-Item $script:privilegedGroupExportPath -Recurse -Force -ErrorAction SilentlyContinue
+        }
+
+        BeforeEach {
+            Mock -ModuleName ZeroTrustAssessment Get-ZtConfig           { return $false }
+            Mock -ModuleName ZeroTrustAssessment Set-ZtConfig           {}
+            Mock -ModuleName ZeroTrustAssessment Update-ZtProgressState {}
+            Mock -ModuleName ZeroTrustAssessment Write-PSFMessage       {}
+
+            $groupId = [Guid]::NewGuid().ToString()
+            @{
+                value = @(
+                    @{
+                        id               = 'assignment-1'
+                        roleDefinitionId = 'role-1'
+                        principal        = @{
+                            '@odata.type' = '#microsoft.graph.group'
+                            id            = $groupId
+                            displayName   = 'Privileged Group'
+                        }
+                    }
+                )
+            } | Export-PSFJson -Path (Join-Path $script:roleAssignmentPath 'RoleAssignment-0.json') -Depth 100 -Encoding UTF8NoBom
+        }
+
+        It "Exports valid member JSON without materializing the result page" {
+            Mock -ModuleName ZeroTrustAssessment Get-ZtGroupMember {
+                return @(
+                    @{
+                        '@odata.type'      = '#microsoft.graph.user'
+                        id                 = 'user-1'
+                        displayName        = 'Privileged User'
+                        userPrincipalName  = 'privileged.user@example.invalid'
+                    }
+                )
+            }
+
+            Export-ZtGraphEntityPrivilegedGroup `
+                -InputName 'RoleAssignment' `
+                -Name 'RoleAssignmentGroup' `
+                -ExportPath $script:privilegedGroupExportPath
+
+            Should -Invoke -ModuleName ZeroTrustAssessment -CommandName Get-ZtGroupMember -Times 1 -Exactly
+
+            $outputFile = Get-ChildItem -Path (Join-Path $script:privilegedGroupExportPath 'RoleAssignmentGroup') -Filter '*.json' -File | Select-Object -First 1
+            $outputFile | Should -Not -BeNullOrEmpty
+
+            $output = Get-Content -Path $outputFile.FullName -Raw | ConvertFrom-Json -AsHashtable
+            $output.value | Should -HaveCount 1
+            $output.value[0].id | Should -Be 'user-1'
+            $output.value[0].privilegedGroupId | Should -Not -BeNullOrEmpty
+            $output.value[0].roleDefinitionId | Should -Be 'role-1'
+
+            Should -Invoke -ModuleName ZeroTrustAssessment -CommandName Write-PSFMessage -Times 3 -Exactly -ParameterFilter {
+                $Message -like 'PrivilegedGroupExportMetrics *'
+            }
+        }
     }
 
     Context "QueryStringAppend — tag filter is applied to application queries" {
