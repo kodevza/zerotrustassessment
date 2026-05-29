@@ -1,11 +1,53 @@
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Warsaw
+    open-pull-requests-limit: 5
     groups:
       github-actions:
-        patterns: ["*"]
+        patterns:
+          - "*"
+
+  - package-ecosystem: npm
+    directory: /
     schedule:
-      interval: "weekly"
-    cooldown:
-      default-days: 7
+      interval: weekly
+      day: monday
+      time: "06:10"
+      timezone: Europe/Warsaw
+    open-pull-requests-limit: 5
+    groups:
+      npm-root:
+        patterns:
+          - "*"
+
+  - package-ecosystem: npm
+    directory: /src/react
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:20"
+      timezone: Europe/Warsaw
+    open-pull-requests-limit: 5
+    groups:
+      npm-react-docs:
+        patterns:
+          - "*"
+
+  - package-ecosystem: npm
+    directory: /src/report
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:30"
+      timezone: Europe/Warsaw
+    open-pull-requests-limit: 5
+    groups:
+      npm-report:
+        patterns:
+          - "*"
