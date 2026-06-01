@@ -1,0 +1,89 @@
+name: Release PowerShell Module
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  release:
+    types:
+      - published
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to package, for example v0.1.0 or v0.1.0-preview'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  package-and-release:
+    runs-on: windows-latest
+
+    env:
+      MODULE_NAME: ZeroTrustAssessment
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+
+      - name: Package module
+        id: package
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          $eventName = '${{ github.event_name }}'
+          $tag = switch ($eventName) {
+            'workflow_dispatch' { '${{ inputs.tag }}'; break }
+            'release' { '${{ github.event.release.tag_name }}'; break }
+            default { '${{ github.ref_name }}' }
+          }
+
+          if ($tag -notmatch '^v(?<ModuleVersion>\d+\.\d+\.\d+)(?:-(?<Prerelease>[0-9A-Za-z][0-9A-Za-z._-]*))?$') {
+            throw "Release tags must match v<major>.<minor>.<patch> with an optional prerelease suffix, for example v0.1.0, v2.4.0-kodevza, or v2.4.0-memory_gc. Received: $tag"
+          }
+
+          $version = $Matches.ModuleVersion
+          $packageVersion = $tag.TrimStart('v')
+          $moduleName = $env:MODULE_NAME
+          $releaseDirectory = Join-Path $PWD 'build/release'
+          $moduleDirectory = Join-Path (Join-Path $releaseDirectory $moduleName) $version
+          $artifactDirectory = Join-Path $PWD 'artifacts'
+          $zipPath = Join-Path $artifactDirectory "$moduleName-$tag.zip"
+
+          Remove-Item -Path $releaseDirectory, $artifactDirectory -Recurse -Force -ErrorAction SilentlyContinue
+          New-Item -Path $artifactDirectory -ItemType Directory -Force | Out-Null
+
+          & .\build\powershell\Install-CIPrerequisites.ps1
+          & .\build\powershell\Build-ReleasePSModule.ps1 `
+            -BaseDirectory $PWD `
+            -OutputDirectory $releaseDirectory `
+            -ReleaseVersion $packageVersion
+
+          if (!(Test-Path -Path $moduleDirectory -PathType Container)) {
+            throw "Expected build output directory was not found: $moduleDirectory"
+          }
+
+          Compress-Archive -Path $moduleDirectory -DestinationPath $zipPath -Force
+
+          "tag=$tag" >> $env:GITHUB_OUTPUT
+          "zip_path=$zipPath" >> $env:GITHUB_OUTPUT
+          "zip_name=$(Split-Path -Path $zipPath -Leaf)" >> $env:GITHUB_OUTPUT
+
+      - name: Publish GitHub Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          $tag = '${{ steps.package.outputs.tag }}'
+          $zipPath = '${{ steps.package.outputs.zip_path }}'
+          $notesPath = Join-Path $env:RUNNER_TEMP 'release-notes.md'
+
+          git log -1 --pretty=%B | Set-Content -Path $notesPath -Encoding utf8
+          gh release create $tag $zipPath --title $tag --notes-file $notesPath --verify-tag --prerelease

@@ -54,15 +54,27 @@
     background: var(--surface2);
   }
   .header-icon { flex-shrink: 0; display: flex; align-items: center; }
-  .header-title {
-    font-size: 15px;
-    font-weight: 600;
-    flex: 1;
-  }
-  .header-status {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+	  .header-title {
+	    font-size: 15px;
+	    font-weight: 600;
+	    flex: 1;
+	  }
+	  .header-meta {
+	    display: flex;
+	    align-items: center;
+	    gap: 8px;
+	    font-size: 11px;
+	    color: var(--text-muted);
+	    flex-shrink: 0;
+	    font-variant-numeric: tabular-nums;
+	  }
+	  .header-meta .sep {
+	    color: var(--border);
+	  }
+	  .header-status {
+	    display: flex;
+	    align-items: center;
+	    gap: 6px;
     font-size: 12px;
     color: var(--text-dim);
   }
@@ -296,26 +308,31 @@
   .waiting-state p { font-size: 13px; }
 
   /* Error banner */
-  .error-banner {
-    background: var(--red-dim);
-    border-bottom: 1px solid rgba(248,113,113,0.2);
-    padding: 10px 20px;
-    font-size: 12px;
-    color: var(--red);
-    display: none;
-  }
-</style>
-</head>
-<body>
-<div class="container">
-  <div class="card">
+	  .error-banner {
+	    background: var(--red-dim);
+	    border-bottom: 1px solid rgba(248,113,113,0.2);
+	    padding: 10px 20px;
+	    font-size: 12px;
+	    color: var(--red);
+	    display: none;
+	  }
+	</style>
+	</head>
+	<body>
+	<div class="container">
+	  <div class="card">
     <!-- Header -->
     <div class="header">
-      <div class="header-icon"><svg width="20" height="20" viewBox="0 0 23 23"><rect x="0" y="0" width="11" height="11" fill="#f25022"/><rect x="12" y="0" width="11" height="11" fill="#7fba00"/><rect x="0" y="12" width="11" height="11" fill="#00a4ef"/><rect x="12" y="12" width="11" height="11" fill="#ffb900"/></svg></div>
-      <div class="header-title">Microsoft Zero Trust Assessment</div>
-      <div class="header-status">
-        <div class="pulse-dot waiting" id="pulseDot"></div>
-        <span id="statusText">Connecting...</span>
+	      <div class="header-icon"><svg width="20" height="20" viewBox="0 0 23 23"><rect x="0" y="0" width="11" height="11" fill="#f25022"/><rect x="12" y="0" width="11" height="11" fill="#7fba00"/><rect x="0" y="12" width="11" height="11" fill="#00a4ef"/><rect x="12" y="12" width="11" height="11" fill="#ffb900"/></svg></div>
+	      <div class="header-title">Microsoft Zero Trust Assessment</div>
+	      <div class="header-meta">
+	        <span>v__ZT_MODULE_VERSION__</span>
+	        <span class="sep">|</span>
+	        <span>__ZT_COMMIT_HASH__</span>
+	      </div>
+	      <div class="header-status">
+	        <div class="pulse-dot waiting" id="pulseDot"></div>
+	        <span id="statusText">Connecting...</span>
       </div>
     </div>
 
@@ -327,10 +344,10 @@
       <div class="waiting-state">
         <div class="waiting-spinner"></div>
         <p>Waiting for assessment to start...</p>
-      </div>
-    </div>
-  </div>
-</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
 <script>
 (function() {

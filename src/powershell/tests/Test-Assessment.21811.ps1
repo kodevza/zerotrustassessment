@@ -132,6 +132,7 @@ FROM User
         Tag                = 'Identity'
         Status             = $passed
         Result             = $testResultMarkdown
+        AffectedObjects    = @($misconfiguredUsers)
     }
     Add-ZtTestResultDetail @params
 }

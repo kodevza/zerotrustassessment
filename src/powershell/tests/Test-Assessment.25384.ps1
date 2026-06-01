@@ -72,7 +72,7 @@ function Test-Assessment-25384 {
     $uniqueSpIds = $spIds | Select-Object -Unique
 
     if ($uniqueSpIds) {
-        $sps = Invoke-ZtGraphBatchRequest -Path "servicePrincipals/{0}?`$select=id,displayName,appId,appOwnerOrganizationId" -ArgumentList $uniqueSpIds -ApiVersion beta -ErrorAction SilentlyContinue
+        $sps = Invoke-ZtGraphBatchRequest -Path "servicePrincipals/{0}?`$select=id,displayName,appId,appOwnerOrganizationId,tags" -ArgumentList $uniqueSpIds -ApiVersion beta -ErrorAction SilentlyContinue
         foreach ($sp in $sps) {
             if ($sp.id) { $spLookup[$sp.id] = $sp }
         }
@@ -390,6 +390,7 @@ function Test-Assessment-25384 {
         Title  = 'Application admin rights are constrained to specific Private Access apps, not tenant-wide'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = @($scopedAppsMap.Values)
     }
 
     Add-ZtTestResultDetail @params

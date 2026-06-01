@@ -1,0 +1,181 @@
+name: Security Scans
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "23 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    name: Dependency Review
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: moderate
+          comment-summary-in-pr: always
+
+  codeql:
+    name: CodeQL
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language:
+          - javascript-typescript
+    steps:
+      - uses: actions/checkout@v6
+      - uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+      - uses: github/codeql-action/analyze@v4
+
+  powershell-analyzer:
+    name: PSScriptAnalyzer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+          Install-Module PSScriptAnalyzer -Scope CurrentUser -Force
+      - name: Analyze PowerShell
+        shell: pwsh
+        run: |
+          $paths = @(
+            'build',
+            'code-tests',
+            'src/powershell',
+            'Update-ZtTestService.ps1'
+          )
+
+          $existingPaths = $paths | Where-Object { Test-Path $_ }
+          $results = @()
+
+          foreach ($path in $existingPaths) {
+            try {
+              $results += Invoke-ScriptAnalyzer -Path $path -Recurse -Settings PSGallery -Severity Warning,Error -ErrorAction Continue
+            }
+            catch {
+              Write-Warning "PSScriptAnalyzer could not fully analyze ${path}: $_"
+            }
+          }
+
+          $results | Format-Table -AutoSize
+
+          if ($results) {
+            Write-Warning "PSScriptAnalyzer found $($results.Count) issue(s)."
+          }
+
+          exit 0
+
+  npm-audit:
+    name: npm audit
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - .
+          - src/react
+          - src/report
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: ${{ matrix.project }}/package-lock.json
+      - name: Audit ${{ matrix.project }}
+        working-directory: ${{ matrix.project }}
+        run: npm audit --audit-level=moderate || true
+
+  scorecard:
+    name: OpenSSF Scorecard
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: read
+      security-events: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: ossf/scorecard-action@v2.4.0
+        with:
+          results_file: scorecard.sarif
+          results_format: sarif
+          publish_results: true
+      - uses: github/codeql-action/upload-sarif@v4
+        with:
+          sarif_file: scorecard.sarif
+
+  secrets:
+    name: Secret Scan
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2.3.9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  checkov:
+    name: Checkov
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run Checkov
+        continue-on-error: true
+        run: |
+          pipx run checkov \
+            --directory . \
+            --output sarif \
+            --output-file-path checkov.sarif \
+            --soft-fail || true
+
+          if [ ! -f checkov.sarif ]; then
+            printf '{"version":"2.1.0","runs":[]}\n' > checkov.sarif
+          fi
+      - uses: github/codeql-action/upload-sarif@v4
+        if: always()
+        with:
+          sarif_file: checkov.sarif
+
+  actions-hardening:
+    name: GitHub Actions Hardening
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run zizmor
+        run: pipx run zizmor --format sarif .github/workflows > zizmor.sarif
+      - uses: github/codeql-action/upload-sarif@v4
+        with:
+          sarif_file: zizmor.sarif

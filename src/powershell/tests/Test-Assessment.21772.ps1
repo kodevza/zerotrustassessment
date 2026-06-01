@@ -25,7 +25,7 @@ function Test-Assessment-21772 {
     Write-PSFMessage '🟦 Start' -Tag Test -Level VeryVerbose
 
     $sqlApp = @"
-select distinct ON (id) appId, displayName, signInAudience,
+select distinct ON (id) id, appId, displayName, signInAudience, tags,
     try_cast(unnest(passwordCredentials).endDateTime as date) as keyEndDateTime
 from Application
 where passwordCredentials != '[]'
@@ -33,7 +33,7 @@ order by displayName, keyEndDateTime DESC
 "@
 
     $sqlSP = @"
-select distinct ON (id) appId, displayName, appOwnerOrganizationId, signInAudience,
+select distinct ON (id) id, appId, displayName, appOwnerOrganizationId, signInAudience, tags,
     try_cast(unnest(passwordCredentials).endDateTime as date) as keyEndDateTime
 from ServicePrincipal
 where passwordCredentials != '[]'
@@ -85,6 +85,7 @@ order by displayName, keyEndDateTime DESC
         Tag                = 'Application'
         Status             = $passed
         Result             = $testResultMarkdown
+        AffectedObjects    = @($resultsApp) + @($resultsSP)
     }
 
     Add-ZtTestResultDetail @params

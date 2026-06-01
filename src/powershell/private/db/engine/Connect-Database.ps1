@@ -62,6 +62,21 @@
     $database = [DuckDB.NET.Data.DuckDBConnection]::new("Data Source=$Path")
     try {
         $database.Open()
+		if ($Path -ne ':memory:') {
+			$dbPath = [System.IO.Path]::GetFullPath($Path)
+			$tempDirectory = "$dbPath.tmp"
+			$null = New-Item -ItemType Directory -Path $tempDirectory -Force -ErrorAction Stop
+
+			$memoryLimit = Get-PSFConfigValue -FullName 'ZeroTrustAssessment.Database.MemoryLimit' -Fallback '16GB'
+			$threads = Get-PSFConfigValue -FullName 'ZeroTrustAssessment.Database.Threads' -Fallback 1
+			$escapedMemoryLimit = "$memoryLimit".Replace("'", "''")
+			$escapedTempDirectory = $tempDirectory.Replace("'", "''")
+
+			Invoke-DatabaseQuery -Database $database -Sql "SET memory_limit = '$escapedMemoryLimit';" -NonQuery
+			Invoke-DatabaseQuery -Database $database -Sql "SET temp_directory = '$escapedTempDirectory';" -NonQuery
+			Invoke-DatabaseQuery -Database $database -Sql "SET preserve_insertion_order = false;" -NonQuery
+			Invoke-DatabaseQuery -Database $database -Sql "SET threads = $threads;" -NonQuery
+		}
     }
     catch {
         $database.Dispose()

@@ -65,6 +65,7 @@ function Test-Assessment-21770 {
         Title = 'Inactive applications don''t have highly privileged permissions'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = $inactiveRiskyApps
     }
     Add-ZtTestResultDetail @params
 }
