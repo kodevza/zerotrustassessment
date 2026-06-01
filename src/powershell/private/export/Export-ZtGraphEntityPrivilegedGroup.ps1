@@ -47,32 +47,140 @@
 	$readFolderPath = Join-Path -Path $ExportPath -ChildPath $InputName
 	$files = Get-ChildItem -Path $readFolderPath -File
 
+	function Clear-PrivilegedGroupInputPayload {
+		[CmdletBinding()]
+		param (
+			$Results
+		)
+
+		if (-not $Results) {
+			return
+		}
+
+		if ($Results -is [System.Collections.IDictionary]) {
+			if ($Results.Contains('value')) {
+				$Results.Remove('value')
+			}
+			return
+		}
+
+		$valueProperty = $Results.PSObject.Properties['value']
+		if (-not $valueProperty) {
+			return
+		}
+
+		try {
+			$Results.PSObject.Properties.Remove('value')
+		}
+		catch {
+			$valueProperty.Value = $null
+		}
+	}
+
+	function New-PrivilegedGroupJsonWriter {
+		[CmdletBinding()]
+		param (
+			[string]
+			$FilePath
+		)
+
+		$encoding = [System.Text.UTF8Encoding]::new($false)
+		$writer = [System.IO.StreamWriter]::new($FilePath, $false, $encoding)
+		$writer.Write('{"value":[')
+		return @{
+			Writer   = $writer
+			HasItems = $false
+			FilePath  = $FilePath
+			Closed    = $false
+		}
+	}
+
+	function Write-PrivilegedGroupJsonItem {
+		[CmdletBinding()]
+		param (
+			[hashtable]
+			$WriterState,
+
+			$InputObject
+		)
+
+		if ($WriterState.HasItems) {
+			$WriterState.Writer.Write(',')
+		}
+
+		$WriterState.Writer.Write(($InputObject | ConvertTo-Json -Depth 100 -Compress))
+		$WriterState.HasItems = $true
+	}
+
+	function Close-PrivilegedGroupJsonWriter {
+		[CmdletBinding()]
+		param (
+			[hashtable]
+			$WriterState
+		)
+
+		if (-not $WriterState -or $WriterState.Closed) {
+			return
+		}
+
+		$WriterState.Writer.Write(']}')
+		$WriterState.Writer.Dispose()
+		$WriterState.Closed = $true
+	}
+
 	$pageIndex = 0
 	foreach ($file in $files) {
-		$roleAssignments = Import-PSFJson -Path $file.FullName -Encoding UTF8NoBom
-		$groups = $roleAssignments.value | Where-Object { $_.principal.'@odata.type' -eq '#microsoft.graph.group' }
+		$roleAssignments = $null
+		$writerState = $null
+		$fileCompleted = $false
+		try {
+			$roleAssignments = Import-PSFJson -Path $file.FullName -Encoding UTF8NoBom
 
-		# Create an object with a 'value' property that contains the array of items
-		# Resultant json files are expected to have this format when loading the database content for the Tests processing
-		$results = @{ value = @() }
-
-		$results.value = @($groups | ForEach-Object {
-				# 5/10/2024 - Entra ID Role Enabled Security Groups do not currently support nesting so we don't need to get transitive members
-				$groupId = $_.principal.id
-				Update-ZtProgressState -WorkerId $Name -WorkerName $Name -WorkerStatus 'Running' -WorkerDetail "GET beta/groups/$groupId/members"
-				$members = Get-ZtGroupMember -GroupId $groupId -OutputType Hashtable
-				foreach ($member in $members) {
-					# Clone the hashtable, so we don't modify the hashed results from the membership resolution
-					$cloneMember = $member.Clone()
-					$cloneMember['privilegedGroupId'] = $groupId
-					$cloneMember['roleDefinitionId'] = $_.roleDefinitionId
-					$cloneMember
+			foreach ($roleAssignment in $roleAssignments.value) {
+				if ($roleAssignment.principal.'@odata.type' -ne '#microsoft.graph.group') {
+					continue
 				}
-			})
-		if ($results.value.Count -gt 0) {
-			$filePath = Join-Path $folderPath "$Name-$pageIndex.json"
-			$results | Export-PSFJson -Path $filePath -Depth 100 -Encoding UTF8NoBom
-			$pageIndex++
+
+				# 5/10/2024 - Entra ID Role Enabled Security Groups do not currently support nesting so we don't need to get transitive members
+				$groupId = $roleAssignment.principal.id
+				$members = $null
+				try {
+					Update-ZtProgressState -WorkerId $Name -WorkerName $Name -WorkerStatus 'Running' -WorkerDetail "GET beta/groups/$groupId/members"
+					$members = Get-ZtGroupMember -GroupId $groupId -OutputType Hashtable
+					foreach ($member in $members) {
+						if (-not $writerState) {
+							$filePath = Join-Path $folderPath "$Name-$pageIndex.json"
+							$writerState = New-PrivilegedGroupJsonWriter -FilePath $filePath
+						}
+
+						# Clone the hashtable, so we don't modify the hashed results from the membership resolution
+						$cloneMember = $member.Clone()
+						$cloneMember['privilegedGroupId'] = $groupId
+						$cloneMember['roleDefinitionId'] = $roleAssignment.roleDefinitionId
+						Write-PrivilegedGroupJsonItem -WriterState $writerState -InputObject $cloneMember
+					}
+				}
+				finally {
+					$members = $null
+				}
+			}
+
+			if ($writerState -and $writerState.HasItems) {
+				Close-PrivilegedGroupJsonWriter -WriterState $writerState
+				$fileCompleted = $true
+				$pageIndex++
+			}
+		}
+		finally {
+			if ($writerState -and -not $writerState.Closed) {
+				$writerState.Writer.Dispose()
+			}
+			if ($writerState -and -not $fileCompleted) {
+				Remove-Item -Path $writerState.FilePath -Force -ErrorAction SilentlyContinue
+			}
+			Clear-PrivilegedGroupInputPayload -Results $roleAssignments
+			$writerState = $null
+			$roleAssignments = $null
 		}
 	}
 
