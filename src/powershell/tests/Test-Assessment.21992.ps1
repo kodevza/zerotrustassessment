@@ -23,7 +23,7 @@ function Test-Assessment-21992{
     Write-PSFMessage '🟦 Start' -Tag Test -Level VeryVerbose
     $sqlApp = @"
     select distinct ON (id) * from
-        (select id, appId, displayName, signInAudience,
+        (select id, appId, displayName, signInAudience, tags,
         try_cast(unnest(keyCredentials).startDateTime as date) as keyStartDateTime,
         current_date - interval 180 day minStartDate
         from Application)
@@ -32,7 +32,7 @@ function Test-Assessment-21992{
 "@
     $sqlSP = @"
     select distinct ON (id) * from
-        (select id, appId, displayName, appOwnerOrganizationId, signInAudience,
+        (select id, appId, displayName, appOwnerOrganizationId, signInAudience, tags,
         try_cast(unnest(keyCredentials).startDateTime as date) as keyStartDateTime,
         current_date - interval 180 day minStartDate
         from ServicePrincipal)
@@ -81,6 +81,7 @@ function Test-Assessment-21992{
         Tag                = 'Identity'
         Status             = $passed
         Result             = $testResultMarkdown
+        AffectedObjects    = @($resultsApp) + @($resultsSP)
     }
 
     Add-ZtTestResultDetail @params

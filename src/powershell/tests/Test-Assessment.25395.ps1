@@ -208,7 +208,7 @@ WHERE list_contains(tags, 'PrivateAccessNonWebApplication')
         Write-PSFMessage 'Querying database for service principals' -Tag Test -Level VeryVerbose
         try {
             $sql = @"
-SELECT id, appId, displayName, customSecurityAttributes
+SELECT id, appId, displayName, customSecurityAttributes, tags
 FROM ServicePrincipal
 WHERE list_contains(tags, 'PrivateAccessNonWebApplication')
 "@
@@ -481,6 +481,7 @@ WHERE list_contains(tags, 'PrivateAccessNonWebApplication')
         Title  = 'Entra Private Access Application segments are defined to enforce least-privilege access'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = @($apps)
     }
 
     # Add CustomStatus if status is 'Investigate'

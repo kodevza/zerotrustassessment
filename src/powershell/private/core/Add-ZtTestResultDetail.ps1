@@ -50,6 +50,10 @@ function Add-ZtTestResultDetail {
 		# This will be inserted into the contents of Result parameter if the result contains a placeholder %TestResult%.
 		[Object[]] $GraphObjects,
 
+		# Collection of affected objects to include in result metadata.
+		# This is intended for tests that build their own markdown from database rows rather than using GraphObjects.
+		[Object[]] $AffectedObjects,
+
 		# The type of graph object, this will be used to show the right deeplink to the test results report.
 		[ValidateSet('AuthenticationMethod', 'AuthorizationPolicy', 'ConditionalAccess', 'ConsentPolicy',
 			'Devices', 'DiagnosticSettings', 'Domains', 'Groups', 'IdentityProtection', 'Users', 'UserRole',
@@ -226,6 +230,9 @@ function Add-ZtTestResultDetail {
 		TestMinimumLicense     = $testMeta.MinimumLicense
 		TestDescription        = $Description
 		TestResult             = $Result
+		RelatedObjects         = @(
+			Get-ZtiRelatedObject -InputObject (@($GraphObjects) + @($AffectedObjects))
+		)
 		TestSkipped            = $SkippedBecause
 		SkippedReason          = $SkippedReason
 	}

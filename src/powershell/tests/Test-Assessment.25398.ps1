@@ -56,7 +56,7 @@ function Test-Assessment-25398 {
         Write-PSFMessage 'Querying database for Private Access applications' -Tag Test -Level VeryVerbose
         try {
             $sql = @"
-SELECT id, appId, displayName
+SELECT id, appId, displayName, tags
 FROM Application
 WHERE list_contains(tags, 'PrivateAccessNonWebApplication')
 "@
@@ -168,6 +168,7 @@ WHERE list_contains(tags, 'PrivateAccessNonWebApplication')
                     $rdpApps += [PSCustomObject]@{
                         AppId = $appData.App.appId
                         AppName = $appData.App.displayName
+                        tags = $appData.App.tags
                         DestinationHost = $destinationHost
                         AppType = 'DC RDP App'
                     }
@@ -197,6 +198,7 @@ WHERE list_contains(tags, 'PrivateAccessNonWebApplication')
                     $rdpApps += [PSCustomObject]@{
                         AppId = $appData.App.appId
                         AppName = $appData.App.displayName
+                        tags = $appData.App.tags
                         DestinationHost = $segment.destinationHost
                         AppType = 'General RDP App'
                     }
@@ -453,6 +455,7 @@ $policyRows
         Title  = 'Domain controller RDP access is protected by phishing-resistant authentication through Global Secure Access'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = @($rdpApps)
     }
     if ($customStatus) {
         $params.CustomStatus = $customStatus
