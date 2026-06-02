@@ -46,6 +46,16 @@
 
 	$readFolderPath = Join-Path -Path $ExportPath -ChildPath $InputName
 	$files = Get-ChildItem -Path $readFolderPath -File
+	$maxPageSize = 50000
+
+	function New-PrivilegedGroupExportResults {
+		[CmdletBinding()]
+		param ()
+
+		@{
+			value = [System.Collections.Generic.List[object]]::new()
+		}
+	}
 
 	function Clear-PrivilegedGroupInputPayload {
 		[CmdletBinding()]
@@ -77,64 +87,51 @@
 		}
 	}
 
-	function New-PrivilegedGroupJsonWriter {
+	function Clear-PrivilegedGroupResultPayload {
 		[CmdletBinding()]
 		param (
+			$Results
+		)
+
+		Clear-PrivilegedGroupInputPayload -Results $Results
+	}
+
+	function Export-PrivilegedGroupResultsPage {
+		[CmdletBinding()]
+		param (
+			[Parameter(Mandatory = $true)]
+			$Results,
+
+			[Parameter(Mandatory = $true)]
+			[ref]
+			$PageIndex,
+
+			[Parameter(Mandatory = $true)]
 			[string]
-			$FilePath
+			$Path,
+
+			[Parameter(Mandatory = $true)]
+			[string]
+			$Name
 		)
 
-		$encoding = [System.Text.UTF8Encoding]::new($false)
-		$writer = [System.IO.StreamWriter]::new($FilePath, $false, $encoding)
-		$writer.Write('{"value":[')
-		return @{
-			Writer   = $writer
-			HasItems = $false
-			FilePath  = $FilePath
-			Closed    = $false
-		}
-	}
-
-	function Write-PrivilegedGroupJsonItem {
-		[CmdletBinding()]
-		param (
-			[hashtable]
-			$WriterState,
-
-			$InputObject
-		)
-
-		if ($WriterState.HasItems) {
-			$WriterState.Writer.Write(',')
-		}
-
-		$WriterState.Writer.Write(($InputObject | ConvertTo-Json -Depth 100 -Compress))
-		$WriterState.HasItems = $true
-	}
-
-	function Close-PrivilegedGroupJsonWriter {
-		[CmdletBinding()]
-		param (
-			[hashtable]
-			$WriterState
-		)
-
-		if (-not $WriterState -or $WriterState.Closed) {
+		if ($Results.value.Count -eq 0) {
 			return
 		}
 
-		$WriterState.Writer.Write(']}')
-		$WriterState.Writer.Dispose()
-		$WriterState.Closed = $true
+		$filePath = Join-Path $Path "$Name-$($PageIndex.Value).json"
+		$Results | Export-PSFJson -Path $filePath -Depth 100 -Encoding UTF8NoBom
+		$Results.value.Clear()
+		$PageIndex.Value++
 	}
 
 	$pageIndex = 0
 	foreach ($file in $files) {
 		$roleAssignments = $null
-		$writerState = $null
-		$fileCompleted = $false
+		$results = $null
 		try {
 			$roleAssignments = Import-PSFJson -Path $file.FullName -Encoding UTF8NoBom
+			$results = New-PrivilegedGroupExportResults
 
 			foreach ($roleAssignment in $roleAssignments.value) {
 				if ($roleAssignment.principal.'@odata.type' -ne '#microsoft.graph.group') {
@@ -148,16 +145,15 @@
 					Update-ZtProgressState -WorkerId $Name -WorkerName $Name -WorkerStatus 'Running' -WorkerDetail "GET beta/groups/$groupId/members"
 					$members = Get-ZtGroupMember -GroupId $groupId -OutputType Hashtable
 					foreach ($member in $members) {
-						if (-not $writerState) {
-							$filePath = Join-Path $folderPath "$Name-$pageIndex.json"
-							$writerState = New-PrivilegedGroupJsonWriter -FilePath $filePath
-						}
-
 						# Clone the hashtable, so we don't modify the hashed results from the membership resolution
 						$cloneMember = $member.Clone()
 						$cloneMember['privilegedGroupId'] = $groupId
 						$cloneMember['roleDefinitionId'] = $roleAssignment.roleDefinitionId
-						Write-PrivilegedGroupJsonItem -WriterState $writerState -InputObject $cloneMember
+						$results.value.Add($cloneMember)
+
+						if ($results.value.Count -ge $maxPageSize) {
+							Export-PrivilegedGroupResultsPage -Results $results -PageIndex ([ref]$pageIndex) -Path $folderPath -Name $Name
+						}
 					}
 				}
 				finally {
@@ -165,22 +161,15 @@
 				}
 			}
 
-			if ($writerState -and $writerState.HasItems) {
-				Close-PrivilegedGroupJsonWriter -WriterState $writerState
-				$fileCompleted = $true
-				$pageIndex++
+			if ($results.value.Count -gt 0) {
+				Export-PrivilegedGroupResultsPage -Results $results -PageIndex ([ref]$pageIndex) -Path $folderPath -Name $Name
 			}
 		}
 		finally {
-			if ($writerState -and -not $writerState.Closed) {
-				$writerState.Writer.Dispose()
-			}
-			if ($writerState -and -not $fileCompleted) {
-				Remove-Item -Path $writerState.FilePath -Force -ErrorAction SilentlyContinue
-			}
 			Clear-PrivilegedGroupInputPayload -Results $roleAssignments
-			$writerState = $null
+			Clear-PrivilegedGroupResultPayload -Results $results
 			$roleAssignments = $null
+			$results = $null
 		}
 	}
 
