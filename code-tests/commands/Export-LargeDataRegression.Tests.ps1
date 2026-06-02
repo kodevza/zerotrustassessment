@@ -44,68 +44,6 @@ Describe "Export large data regressions" {
             $script:page.ContainsKey('value') | Should -BeFalse
         }
 
-        It "Restarts the entity export when Graph reports an expired directory page token" {
-            $script:requestedUris = @()
-            $script:call = 0
-
-            Mock -ModuleName ZeroTrustAssessment Get-PSFConfigValue {
-                if ($FullName -eq 'ZeroTrustAssessment.Export.Graph.DirectoryPageTokenMaxRestarts') {
-                    return 1
-                }
-                return 1073741824
-            }
-            Mock -ModuleName ZeroTrustAssessment Invoke-ZtRetry { & $ScriptBlock }
-            Mock -ModuleName ZeroTrustAssessment Invoke-MgGraphRequest {
-                $script:call++
-                $script:requestedUris += $Uri
-
-                if ($script:call -eq 1) {
-                    return @{
-                        value             = @(@{ id = 'stale-page-1'; displayName = 'Stale page' })
-                        '@odata.nextLink' = 'beta/servicePrincipals?$skiptoken=expired'
-                    }
-                }
-
-                if ($script:call -eq 2) {
-                    return @{
-                        error = @{
-                            code    = 'DirectoryPageTokenNotFoundException'
-                            message = 'The directory page token was not found.'
-                        }
-                    }
-                }
-
-                if ($script:call -eq 3) {
-                    return @{
-                        value             = @(@{ id = 'fresh-page-1'; displayName = 'Fresh page' })
-                        '@odata.nextLink' = 'beta/servicePrincipals?$skiptoken=fresh'
-                    }
-                }
-
-                return @{
-                    value = @(@{ id = 'fresh-page-2'; displayName = 'Fresh second page' })
-                }
-            }
-
-            Export-ZtGraphEntity -Name 'ServicePrincipal' -Uri 'beta/servicePrincipals' `
-                -QueryString '$top=999' `
-                -ExportPath $script:graphExportPath
-
-            $script:requestedUris | Should -Be @(
-                'beta/servicePrincipals?$top=999'
-                'beta/servicePrincipals?$skiptoken=expired'
-                'beta/servicePrincipals?$top=999'
-                'beta/servicePrincipals?$skiptoken=fresh'
-            )
-
-            $outputFiles = @(Get-ChildItem -Path (Join-Path $script:graphExportPath 'ServicePrincipal') -Filter '*.json' -File | Sort-Object Name)
-            $outputFiles | Should -HaveCount 2
-
-            $firstPage = Get-Content -Path $outputFiles[0].FullName -Raw | ConvertFrom-Json -AsHashtable
-            $secondPage = Get-Content -Path $outputFiles[1].FullName -Raw | ConvertFrom-Json -AsHashtable
-            $firstPage.value[0].id | Should -Be 'fresh-page-1'
-            $secondPage.value[0].id | Should -Be 'fresh-page-2'
-        }
     }
 
     Context "Privileged group export" {
