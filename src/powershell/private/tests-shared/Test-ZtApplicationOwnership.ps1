@@ -55,6 +55,7 @@ function Test-ZtApplicationOwnership {
 				TestId = $TestId
 				Status = $true
 				Result = $PassMessage
+				AffectedObjects = @($Applications)
 			}
 		}
 
@@ -100,6 +101,7 @@ function Test-ZtApplicationOwnership {
 			TestId = $TestId
 			Status = $false
 			Result = $testResultMarkdown
+			AffectedObjects = @($Applications)
 		}
 	}
 	#endregion Helper Functions

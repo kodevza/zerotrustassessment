@@ -1,6 +1,16 @@
 ﻿. "$($global:__testData.TestRoot)\general\FileIntegrity.Exceptions.ps1"
 
 Describe "Verifying integrity of module files" {
+	Context "Validating module manifest" {
+		$manifestPath = Join-Path $global:__testData.ModuleRoot "$($global:__testData.ModuleName).psd1"
+
+		It "Should declare a valid module version" -TestCases @{ manifestPath = $manifestPath } {
+			$manifest = Import-PowerShellDataFile -Path $manifestPath
+
+			{ [version]$manifest.ModuleVersion } | Should -Not -Throw
+		}
+	}
+
 	Context "Validating PS1 Script files" {
 		$allFiles = Get-ChildItem -Path $global:__testData.ModuleRoot -Recurse | Where-Object Name -like "*.ps1"
 

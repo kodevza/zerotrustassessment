@@ -58,6 +58,7 @@ select
     "@odata.type" as odataType,
     agentIdentityBlueprintId,
     createdByAppId,
+    tags,
     case
         when owners is null then 0
         when json_type(owners) = 'ARRAY' then coalesce(json_array_length(owners), 0)
@@ -197,6 +198,7 @@ order by "@odata.type", displayName
         Title  = 'Agent identities and blueprint principals have assigned technical owners and no disabled agents remain in the directory'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = @($ownerlessObjects) + @($disabledObjects)
     }
 
     Add-ZtTestResultDetail @params

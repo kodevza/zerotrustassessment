@@ -81,7 +81,7 @@ function Test-Assessment-25400 {
         Write-ZtProgress -Activity $activity -Status 'Querying Private Access applications'
 
         $sql = @"
-select id, displayName
+select id, displayName, tags
 from main.Application
 where list_contains(tags, 'PrivateAccessNonWebApplication')
    or list_contains(tags, 'NetworkAccessQuickAccessApplication')
@@ -265,6 +265,7 @@ $segmentsTable
         Title  = 'Is port 53 published or private DNS configured for Private Access applications'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = @($privateAccessApps)
     }
     if ($customStatus) {
         $params.CustomStatus = $customStatus

@@ -27,13 +27,13 @@ function Test-Assessment-21868 {
     Write-ZtProgress -Activity $activity -Status "Getting applications and service principals"
 
     $sqlApp = @'
-    select distinct ON (id) id, appId, displayName
+    select distinct ON (id) id, appId, displayName, tags
     from Application
     order by displayName DESC
 '@
 
     $sqlSP = @'
-    select distinct ON (id) id, appId, displayName
+    select distinct ON (id) id, appId, displayName, tags
     from ServicePrincipal
     order by displayName DESC
 '@
@@ -68,7 +68,8 @@ WHERE userType = 'Guest'
             foreach ($owner in $owners) {
                 $owner | Add-Member -MemberType NoteProperty -Name 'appDisplayName' -Value $app.displayName -Force -PassThru |
                     Add-Member -MemberType NoteProperty -Name 'appObjectId' -Value $app.id -Force -PassThru |
-                        Add-Member -MemberType NoteProperty -Name 'appId' -Value $app.appId -Force
+                    Add-Member -MemberType NoteProperty -Name 'appId' -Value $app.appId -Force -PassThru |
+                        Add-Member -MemberType NoteProperty -Name 'tags' -Value $app.tags -Force
                 if ($guestUserIds.Contains($owner.id)) {
                     $guestAppOwners.Add($owner)
                 }
@@ -82,7 +83,8 @@ WHERE userType = 'Guest'
             foreach ($owner in $owners) {
                 $owner | Add-Member -MemberType NoteProperty -Name 'spDisplayName' -Value $sp.displayName -Force -PassThru |
                     Add-Member -MemberType NoteProperty -Name 'spObjectId' -Value $sp.id -Force -PassThru |
-                        Add-Member -MemberType NoteProperty -Name 'spAppId' -Value $sp.appId -Force
+                    Add-Member -MemberType NoteProperty -Name 'spAppId' -Value $sp.appId -Force -PassThru |
+                        Add-Member -MemberType NoteProperty -Name 'tags' -Value $sp.tags -Force
                 if ($guestUserIds.Contains($owner.id)) {
                     $guestSpOwners.Add($owner)
                 }
@@ -175,6 +177,7 @@ WHERE userType = 'Guest'
         Tag                = 'Identity'
         Status             = $passed
         Result             = $testResultMarkdown
+        AffectedObjects    = @($guestAppOwners) + @($guestSpOwners)
     }
 
     Add-ZtTestResultDetail @params

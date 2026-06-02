@@ -27,7 +27,7 @@ function Test-Assessment-21771 {
 
     $sql = @"
     select distinct r.principalId, r.principalDisplayName, sp.publisherName,
-        spsi.lastSignInActivity.lastSignInDateTime, r.privilegeType, sp.appId
+        spsi.lastSignInActivity.lastSignInDateTime, r.privilegeType, sp.appId, sp.tags
     from main.vwRole r
         left join main.ServicePrincipal sp on r.principalId = sp.id
         left join main.ServicePrincipalSignIn spsi on spsi.appId = sp.appId
@@ -65,7 +65,8 @@ function Test-Assessment-21771 {
     Add-ZtTestResultDetail -TestId '21771' -Title 'Inactive applications don'’t have highly privileged Microsoft Entra built-in roles' `
         -UserImpact Low -Risk High -ImplementationCost Low `
         -AppliesTo Identity -Tag Application `
-        -Status $passed -Result $testResultMarkdown
+        -Status $passed -Result $testResultMarkdown `
+        -AffectedObjects $inactiveApps
 }
 
 function Get-AppListRole
