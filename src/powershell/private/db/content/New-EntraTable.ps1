@@ -26,7 +26,8 @@ function New-EntraTable {
     $schemaConfig = Get-TableSchemaConfig -TableName $TableName
 
     # Build read_json parameters
-    $readJsonParams = @('maximum_object_size=100000000')
+    $maximumObjectSize = Get-PSFConfigValue -FullName 'ZeroTrustAssessment.Database.MaximumObjectSize' -Fallback 268435456
+    $readJsonParams = @("maximum_object_size=$maximumObjectSize")
 
     if ($schemaConfig) {
         Write-PSFMessage "Using special schema configuration for table $TableName`: $($schemaConfig.reason)" -Level Debug -Tag DB
@@ -45,18 +46,12 @@ function New-EntraTable {
     }
 
     $paramsString = $readJsonParams -join ', '
-    $sqlTemp = "CREATE OR REPLACE TABLE temp$TableName AS SELECT unnest(value) as d FROM read_json('$FilePath', $paramsString);"
-    $sqlTable = "CREATE OR REPLACE TABLE $TableName AS SELECT d.* FROM temp$TableName;"
+    $escapedFilePath = $FilePath.Replace("'", "''")
+    $sqlTable = "CREATE OR REPLACE TABLE $TableName AS SELECT d.* FROM (SELECT unnest(value) as d FROM read_json('$escapedFilePath', $paramsString)) source;"
 
     try {
-        Write-PSFMessage "Creating temporary table temp$TableName with parameters: $paramsString" -Level Debug -Tag DB
-        Invoke-DatabaseQuery -Database $Database -Sql $sqlTemp -NonQuery
-
-        Write-PSFMessage "Creating final table $TableName" -Level Debug -Tag DB
+        Write-PSFMessage "Creating table $TableName with parameters: $paramsString" -Level Debug -Tag DB
         Invoke-DatabaseQuery -Database $Database -Sql $sqlTable -NonQuery
-
-        Write-PSFMessage "Dropping temporary table temp$TableName" -Level Debug -Tag DB
-        Invoke-DatabaseQuery -Database $Database -Sql "DROP TABLE temp$TableName" -NonQuery
     }
     catch {
         Write-PSFMessage "Error creating table $TableName`: $($_.Exception.Message)" -Level Error -Tag DB -ErrorRecord $_

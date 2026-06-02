@@ -38,7 +38,7 @@ function Test-Assessment-25394 {
     Write-ZtProgress -Activity $activity -Status 'Querying Quick Access application'
 
     # Q1: Get Quick Access application
-    $quickAccessApp = Invoke-ZtGraphRequest -RelativeUri 'servicePrincipals' -Filter "tags/any(c:c eq 'NetworkAccessQuickAccessApplication')" -Select 'appId,displayName,id' -ApiVersion beta
+    $quickAccessApp = Invoke-ZtGraphRequest -RelativeUri 'servicePrincipals' -Filter "tags/any(c:c eq 'NetworkAccessQuickAccessApplication')" -Select 'appId,displayName,id,tags' -ApiVersion beta
     $quickAccessAppId = $null
     if ($quickAccessApp -and $quickAccessApp.Count -gt 0) {
         $quickAccessAppId = $quickAccessApp.appId
@@ -165,6 +165,7 @@ function Test-Assessment-25394 {
         Title  = 'Quick Access is protected by Conditional Access policies'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = @($quickAccessApp)
     }
 
     # Add Investigate status if Quick Access is not configured

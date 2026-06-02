@@ -68,7 +68,7 @@ function Test-Assessment-25393 {
     # The NetworkAccessQuickAccessApplication tag is on the servicePrincipal, not the application object.
     Write-ZtProgress -Activity $activity -Status 'Checking Quick Access application assignment'
     $sql = @"
-SELECT id, appId, displayName
+SELECT id, appId, displayName, tags
 FROM ServicePrincipal
 WHERE list_contains(tags, 'NetworkAccessQuickAccessApplication')
 LIMIT 1
@@ -204,6 +204,7 @@ LIMIT 1
         Title  = 'Quick Access is enabled and bound to a connector'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = @($quickAccessSp)
     }
 
     Add-ZtTestResultDetail @params
