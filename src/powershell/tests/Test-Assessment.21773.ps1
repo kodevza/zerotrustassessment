@@ -25,7 +25,7 @@ function Test-Assessment-21773 {
 
     $sqlApp = @"
     select distinct ON (id) * from
-        (select id, appId, displayName, signInAudience,
+        (select id, appId, displayName, signInAudience, tags,
         try_cast(unnest(keyCredentials).endDateTime as date) as keyEndDateTime,
         current_date + interval 180 day maxExpiryDate
         from Application)
@@ -35,7 +35,7 @@ function Test-Assessment-21773 {
 
     $sqlSP = @"
     select distinct ON (id) * from
-        (select id, appId, displayName, appOwnerOrganizationId, signInAudience,
+        (select id, appId, displayName, appOwnerOrganizationId, signInAudience, tags,
         try_cast(unnest(keyCredentials).endDateTime as date) as keyEndDateTime,
         current_date + interval 180 day maxExpiryDate
         from ServicePrincipal)
@@ -88,6 +88,7 @@ function Test-Assessment-21773 {
         Tag                = 'Application'
         Status             = $passed
         Result             = $testResultMarkdown
+        AffectedObjects    = @($resultsApp) + @($resultsSP)
     }
 
     Add-ZtTestResultDetail @params

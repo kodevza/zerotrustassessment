@@ -37,7 +37,7 @@ function Test-Assessment-25480 {
     Write-ZtProgress -Activity $activity -Status 'Querying Quick Access application'
 
     # Query 1: Get Quick Access service principal ID
-    $quickAccessApp = Invoke-ZtGraphRequest -RelativeUri "servicePrincipals?`$filter=tags/any(c:c eq 'NetworkAccessQuickAccessApplication')&`$select=id,appId,displayName" -ApiVersion beta
+    $quickAccessApp = Invoke-ZtGraphRequest -RelativeUri "servicePrincipals?`$filter=tags/any(c:c eq 'NetworkAccessQuickAccessApplication')&`$select=id,appId,displayName,tags" -ApiVersion beta
 
     $app = $null
     if ($quickAccessApp) {
@@ -113,6 +113,7 @@ function Test-Assessment-25480 {
         Title  = 'Quick Access has assigned users or groups'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = @($quickAccessApp)
     }
 
     # Add CustomStatus if Investigate is needed

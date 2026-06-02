@@ -27,7 +27,20 @@ function Start-ZtProgressServer {
 			Write-PSFMessage -Level Warning -Message "Progress dashboard HTML not found at '$htmlPath'. Progress server will not start."
 			return
 		}
-		$htmlContent = [System.IO.File]::ReadAllText($htmlPath)
+			$htmlContent = [System.IO.File]::ReadAllText($htmlPath)
+			$moduleVersion = if ($script:__ZtSession.ModuleVersion) { $script:__ZtSession.ModuleVersion } else { 'Unknown' }
+			$commitHash = 'Unknown'
+			try {
+				$gitCommit = & git -C $script:ModuleRoot rev-parse --short HEAD 2>$null
+				if ($LASTEXITCODE -eq 0 -and $gitCommit) {
+					$commitHash = $gitCommit.Trim()
+				}
+			}
+			catch {
+				# Git may not be available in packaged/module-gallery installations.
+			}
+			$htmlContent = $htmlContent.Replace('__ZT_MODULE_VERSION__', [System.Net.WebUtility]::HtmlEncode($moduleVersion))
+			$htmlContent = $htmlContent.Replace('__ZT_COMMIT_HASH__', [System.Net.WebUtility]::HtmlEncode($commitHash))
 
 		# Generate a unique run ID so each browser tab can identify its assessment run.
 		# The runId is passed via URL hash (e.g. #run=abc123) rather than injected into HTML,

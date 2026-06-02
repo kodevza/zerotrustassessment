@@ -330,6 +330,7 @@ function Test-Assessment-25396 {
         Title  = 'Conditional Access policies enforce strong authentication for private apps'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = @($privateAccessApps)
     }
 
     if ($unprotectedApps -eq 0 -and $manualReviewApps -gt 0) {

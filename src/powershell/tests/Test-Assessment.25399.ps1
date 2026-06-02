@@ -34,7 +34,7 @@ function Test-Assessment-25399 {
     Write-ZtProgress -Activity $activity -Status 'Querying Quick Access application'
 
     # Query 1: Find Quick Access application
-    $quickAccessApp = Invoke-ZtGraphRequest -RelativeUri "applications" -Filter "tags/any(c:c eq 'NetworkAccessQuickAccessApplication')" -ApiVersion beta
+    $quickAccessApp = Invoke-ZtGraphRequest -RelativeUri "applications" -Filter "tags/any(c:c eq 'NetworkAccessQuickAccessApplication')" -Select 'id,appId,displayName,tags' -ApiVersion beta
     #endregion Data Collection
 
     #region Assessment Logic
@@ -127,6 +127,7 @@ function Test-Assessment-25399 {
         Title  = 'Private DNS is configured for internal name resolution'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = @($quickAccessApp)
     }
     # Add test result details
     Add-ZtTestResultDetail @params
