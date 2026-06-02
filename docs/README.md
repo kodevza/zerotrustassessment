@@ -17,3 +17,4 @@ To build and test the solution, follow these steps:
 
 - [**License Checks**](license_checks.md): This area includes documentation on how to skip tests when certain license requirements are not met.
 - [**Connected Services**](connected_services.md): This area includes documentation on how to skip tests related to connected services when certain conditions are not met.
+- [**Performance Tuning Tips**](performance_tuning.md): This area includes guidance for DuckDB memory, temporary disk usage, parallelism, and large nested Entra ID object sets.

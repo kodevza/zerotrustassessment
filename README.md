@@ -1,3 +1,27 @@
+> [!IMPORTANT]
+> This repository is a fork. The goal of this fork is:
+>
+> 👉 to improve assessment generation performance for large tenants,
+>
+> 👉 add evidence to discovered issues so their owners can be identified in the next step,
+>
+> 👉 provide a more scalable and traceable remediation process.
+>
+> Download the ZIP file from the latest release, then install it with:
+>
+> ```powershell
+> $modulePath = if ($IsWindows) {
+>     "$HOME/Documents/PowerShell/Modules/ZeroTrustAssessment"
+> } else {
+>     "$HOME/.local/share/powershell/Modules/ZeroTrustAssessment"
+> }
+>
+> New-Item -ItemType Directory -Path $modulePath -Force | Out-Null
+> Expand-Archive ./ZeroTrustAssessment-v0.0.4.zip -DestinationPath $modulePath -Force
+>
+> ```
+> ✈️ [Performance Tuning Tips](docs/performance_tuning.md) → DuckDB memory, temporary disk usage, parallelism, and large nested Entra ID object guidance.
+
 [![PSGallery Version](https://img.shields.io/powershellgallery/v/ZeroTrustAssessment.svg?style=flat&logo=powershell&label=PSGallery%20Version)](https://www.powershellgallery.com/packages/ZeroTrustAssessment) 
 [![PSGallery Downloads](https://img.shields.io/powershellgallery/dt/ZeroTrustAssessment.svg?style=flat&logo=powershell&label=PSGallery%20Downloads)](https://www.powershellgallery.com/packages/ZeroTrustAssessment)
 

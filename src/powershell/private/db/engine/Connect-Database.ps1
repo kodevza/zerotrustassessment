@@ -59,9 +59,30 @@
     )
 
 	Write-PSFMessage -Level System -Message 'Establishing a DuckDB connection against {0}' -StringValues $Path -Tag DB
+	$null = Resolve-DuckDBNativeLibrary
     $database = [DuckDB.NET.Data.DuckDBConnection]::new("Data Source=$Path")
     try {
         $database.Open()
+		$memoryLimit = Get-PSFConfigValue -FullName 'ZeroTrustAssessment.Database.MemoryLimit' -Fallback '8GB'
+		$threads = Get-PSFConfigValue -FullName 'ZeroTrustAssessment.Database.Threads' -Fallback 1
+		$escapedMemoryLimit = "$memoryLimit".Replace("'", "''")
+
+		Invoke-DatabaseQuery -Database $database -Sql "SET memory_limit = '$escapedMemoryLimit';" -NonQuery
+		Invoke-DatabaseQuery -Database $database -Sql "SET preserve_insertion_order = false;" -NonQuery
+		Invoke-DatabaseQuery -Database $database -Sql "SET threads = $threads;" -NonQuery
+
+		if ($Path -ne ':memory:') {
+			$dbPath = [System.IO.Path]::GetFullPath($Path)
+			$tempDirectory = "$dbPath.tmp"
+			$null = New-Item -ItemType Directory -Path $tempDirectory -Force -ErrorAction Stop
+
+			$maxTempDirectorySize = Get-PSFConfigValue -FullName 'ZeroTrustAssessment.Database.MaxTempDirectorySize' -Fallback '64GB'
+			$escapedMaxTempDirectorySize = "$maxTempDirectorySize".Replace("'", "''")
+			$escapedTempDirectory = $tempDirectory.Replace("'", "''")
+
+			Invoke-DatabaseQuery -Database $database -Sql "SET temp_directory = '$escapedTempDirectory';" -NonQuery
+			Invoke-DatabaseQuery -Database $database -Sql "SET max_temp_directory_size = '$escapedMaxTempDirectorySize';" -NonQuery
+		}
     }
     catch {
         $database.Dispose()
