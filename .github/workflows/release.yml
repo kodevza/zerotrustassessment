@@ -8,11 +8,6 @@ on:
     types:
       - published
   workflow_dispatch:
-    inputs:
-      tag:
-        description: 'Release tag to package, for example v0.1.0 or v0.1.0-preview'
-        required: true
-        type: string
 
 permissions:
   contents: write
@@ -28,7 +23,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+          ref: ${{ github.event_name == 'release' && github.event.release.tag_name || github.ref }}
 
       - name: Package module
         id: package
@@ -38,9 +33,12 @@ jobs:
 
           $eventName = '${{ github.event_name }}'
           $tag = switch ($eventName) {
-            'workflow_dispatch' { '${{ inputs.tag }}'; break }
             'release' { '${{ github.event.release.tag_name }}'; break }
             default { '${{ github.ref_name }}' }
+          }
+
+          if ($eventName -eq 'workflow_dispatch' -and '${{ github.ref_type }}' -ne 'tag') {
+            throw "Manual release runs must be started from a tag ref. Select a tag such as v0.1.0 when running this workflow."
           }
 
           if ($tag -notmatch '^v(?<ModuleVersion>\d+\.\d+\.\d+)(?:-(?<Prerelease>[0-9A-Za-z][0-9A-Za-z._-]*))?$') {
