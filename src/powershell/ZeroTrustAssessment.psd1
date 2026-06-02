@@ -12,7 +12,7 @@
 RootModule = 'ZeroTrustAssessment.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.3.0'
+ModuleVersion = '2.4.100'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core', 'Desktop'
@@ -134,7 +134,7 @@ PrivateData = @{
         # ReleaseNotes = ''
 
         # Prerelease string of this module
-        Prerelease = ''
+        Prerelease = 'rt'
 
         # Flag to indicate whether the module requires explicit user acceptance for install/update/save
         # RequireLicenseAcceptance = $false
