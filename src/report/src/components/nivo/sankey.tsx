@@ -13,20 +13,41 @@ type SankeyNode = {
 
 type SankeyData = {
     nodes: SankeyNode[];
-    links: any[]; // replace with the actual type of links
+    links: {
+        source: string;
+        target: string;
+        value: number | null;
+    }[];
 };
 
 export const ZtResponsiveSankey = ({ isDark, data }: { isDark:boolean, data: SankeyData }) => {
-    // Filter out nodes that have no connected links to avoid Nivo rendering errors
+    const filteredLinks: SankeyData["links"] = [];
     const connectedNodeIds = new Set<string>();
+
     for (const link of data.links) {
+        const value = Number(link.value);
+        if (!Number.isFinite(value) || value <= 0) {
+            continue;
+        }
+
+        filteredLinks.push({ ...link, value });
         connectedNodeIds.add(link.source);
         connectedNodeIds.add(link.target);
     }
+
+    // Filter out nodes that have no connected links to avoid Nivo rendering errors
     const filteredData: SankeyData = {
         nodes: data.nodes.filter(node => connectedNodeIds.has(node.id)),
-        links: data.links,
+        links: filteredLinks,
     };
+
+    if (filteredData.links.length === 0) {
+        return (
+            <div className={`flex h-full min-h-32 w-full items-center justify-center px-4 text-center text-sm text-muted-foreground ${isDark ? 'sankey-dark-mode' : 'sankey-light-mode'}`}>
+                No data available.
+            </div>
+        );
+    }
 
     const theme = {
         tooltip: {
