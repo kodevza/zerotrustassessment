@@ -88,6 +88,34 @@ function Copy-DuckDBDependencyFiles {
         [System.IO.DirectoryInfo] $ModuleOutputDirectory
     )
 
+    function Resolve-DuckDBPackageLibDirectory {
+        [CmdletBinding()]
+        param (
+            [Parameter(Mandatory)]
+            [string] $PackageDirectory,
+
+            [Parameter(Mandatory)]
+            [string] $PackageId,
+
+            [Parameter(Mandatory)]
+            [string] $TargetFramework
+        )
+
+        $libDirectory = Join-Path $PackageDirectory 'lib'
+        $targetDirectory = Join-Path $libDirectory $TargetFramework
+        if (Test-Path -Path $targetDirectory -PathType Container) {
+            return $targetDirectory
+        }
+
+        $availableFrameworks = @()
+        if (Test-Path -Path $libDirectory -PathType Container) {
+            $availableFrameworks = @(Get-ChildItem -Path $libDirectory -Directory | Select-Object -ExpandProperty Name | Sort-Object)
+        }
+
+        $availableFrameworksText = if ($availableFrameworks) { $availableFrameworks -join ', ' } else { '<none>' }
+        throw "DuckDB package $PackageId does not contain lib/$TargetFramework. Available target frameworks: $availableFrameworksText"
+    }
+
     $duckDBDataPackage = $PackagesConfig.packages.package | Where-Object id -EQ 'DuckDB.NET.Data.Full' | Select-Object -First 1
     $duckDBBindingsPackage = $PackagesConfig.packages.package | Where-Object id -EQ 'DuckDB.NET.Bindings.Full' | Select-Object -First 1
 
@@ -105,8 +133,8 @@ function Copy-DuckDBDependencyFiles {
     $duckDBDataPackageDirectory = Join-Path $PackagesDirectory.FullName ("{0}.{1}" -f $duckDBDataPackage.id, $duckDBDataPackage.version)
     $duckDBBindingsPackageDirectory = Join-Path $PackagesDirectory.FullName ("{0}.{1}" -f $duckDBBindingsPackage.id, $duckDBBindingsPackage.version)
 
-    $duckDBDataLibDirectory = Join-Path (Join-Path $duckDBDataPackageDirectory 'lib') $targetFramework
-    $duckDBBindingsLibDirectory = Join-Path (Join-Path $duckDBBindingsPackageDirectory 'lib') $targetFramework
+    $duckDBDataLibDirectory = Resolve-DuckDBPackageLibDirectory -PackageDirectory $duckDBDataPackageDirectory -PackageId $duckDBDataPackage.id -TargetFramework $targetFramework
+    $duckDBBindingsLibDirectory = Resolve-DuckDBPackageLibDirectory -PackageDirectory $duckDBBindingsPackageDirectory -PackageId $duckDBBindingsPackage.id -TargetFramework $targetFramework
     $duckDBRuntimesDirectory = Join-Path $duckDBBindingsPackageDirectory 'runtimes'
 
     $filesToCopy = @(
