@@ -236,7 +236,10 @@ export interface Test {
   TestDescription: string;
 }
 
-export const reportData: ZeroTrustAssessmentReport = {
+const injectedReportData =
+  typeof window !== "undefined" ? window.__ZERO_TRUST_REPORT_DATA__ : undefined;
+
+const defaultReportData: ZeroTrustAssessmentReport = {
   "ExecutedAt": "2025-10-21T08:07:56.502298+11:00",
   "TenantId": "0817c655-a853-4d8f-9723-3a333b5b9235",
   "TenantName": "Pora Inc.",
@@ -979,3 +982,5 @@ export const reportData: ZeroTrustAssessmentReport = {
   },
   "EndOfJson": "EndOfJson"
 }
+
+export const reportData: ZeroTrustAssessmentReport = injectedReportData ?? defaultReportData;
