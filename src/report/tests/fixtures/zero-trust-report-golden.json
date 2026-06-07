@@ -1,0 +1,3170 @@
+{
+  "source": "ZeroTrustReport99/zt-export/ZeroTrustAssessmentReport.json",
+  "metadata": {
+    "ExecutedAt": "2026-06-02T16:06:31.3057648+02:00",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
+    "TenantName": "Golden Tenant",
+    "Domain": "example.test",
+    "Account": "account@example.test",
+    "CurrentVersion": "2.4.100",
+    "LatestVersion": "2.3.0"
+  },
+  "TestResultSummary": {
+    "IdentityPassed": 22,
+    "IdentityTotal": 63,
+    "DevicesPassed": 0,
+    "DevicesTotal": 0,
+    "NetworkPassed": 0,
+    "NetworkTotal": 6,
+    "DataPassed": 0,
+    "DataTotal": 0
+  },
+  "TenantOverview": {
+    "UserCount": 4,
+    "GuestCount": 1,
+    "GroupCount": 8,
+    "ApplicationCount": 63,
+    "DeviceCount": 1,
+    "ManagedDeviceCount": 0
+  },
+  "optionalSections": {
+    "DeviceOverview": false,
+    "ConfigWindowsEnrollment": false,
+    "ConfigDeviceEnrollmentRestriction": false,
+    "ConfigDeviceCompliancePolicies": false,
+    "ConfigDeviceAppProtectionPolicies": false,
+    "sankey": {
+      "OverviewCaMfaAllUsers": {
+        "present": true,
+        "nodes": 6
+      },
+      "OverviewCaDevicesAllUsers": {
+        "present": true,
+        "nodes": 6
+      },
+      "OverviewAuthMethodsPrivilegedUsers": {
+        "present": true,
+        "nodes": 8
+      },
+      "OverviewAuthMethodsAllUsers": {
+        "present": true,
+        "nodes": 8
+      }
+    }
+  },
+  "tests": [
+    {
+      "TestId": "35014",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Label Policy Configuration",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21786,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21791",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "External collaboration",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 26882,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21823",
+      "TestStatus": "Passed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "External collaboration",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35008",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "SharePoint Online",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM2\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21833",
+      "TestStatus": "Planned",
+      "TestRisk": "Low",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "27004",
+      "TestStatus": "Skipped",
+      "TestRisk": "Low",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21857",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21983",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 21819,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P2. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24870,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Data",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21837",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Devices",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21841",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35001",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Entra",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM2\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35016",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Information Protection",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35035",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Advanced Classification",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21787",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 26887,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21845,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21895",
+      "TestStatus": "Planned",
+      "TestRisk": "Low",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "35038",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Data Security Posture Management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25422",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\") OR (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25410",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24823,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35040",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Data Security Posture Management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21894",
+      "TestStatus": "Planned",
+      "TestRisk": "Low",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 21820,
+      "TestStatus": "Skipped",
+      "TestRisk": "Low",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P2. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25406",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 27018,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 27017,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24551,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24574,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24568,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35018",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Information Protection",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21799,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P2. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21941,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25395",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21893",
+      "TestStatus": "Planned",
+      "TestRisk": "Low",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21831",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "25392",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Private Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35041",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Data Security Posture Management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM2\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21814",
+      "TestStatus": "Passed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21813",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21868",
+      "TestStatus": "Passed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "External collaboration",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21781",
+      "TestStatus": "Planned",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 21806,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24561,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24549,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Data",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21784,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control; Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21888",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "35004",
+      "TestStatus": "Skipped",
+      "TestRisk": "Low",
+      "TestPillar": "Data",
+      "TestCategory": "Sensitivity Labels",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21846",
+      "TestStatus": "Failed",
+      "TestRisk": "Low",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 25537,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test relies on capabilities not currently available (e.g., cmdlets that are not available on all platforms, Resolve-DnsName)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 22659,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Monitoring",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": "This test is for tenants that are licensed for Entra Workload ID. See [Entra Workload ID licensing](https://learn.microsoft.com/entra/workload-id/workload-identities-faqs)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21824",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "External collaboration",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21777",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21855",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21782",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "27002",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21862,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Monitoring",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": "This test is for tenants that are licensed for Entra Workload ID. See [Entra Workload ID licensing](https://learn.microsoft.com/entra/workload-id/workload-identities-faqs)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24543,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21830,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 25550,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35021",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Information Protection",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21847",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21796,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24573,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35005",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "SharePoint Online",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21815,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P2. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21828,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21887",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 24569,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24554,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "22072",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "25375",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\") OR (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35010",
+      "TestStatus": "Skipped",
+      "TestRisk": "Low",
+      "TestPillar": "Data",
+      "TestCategory": "Encryption",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM2\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 26889,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21822",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24540,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21897",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "High",
+      "TestImplementationCost": "High",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "35020",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Information Protection",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21883,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra Workload ID. See [Entra Workload ID licensing](https://learn.microsoft.com/entra/workload-id/workload-identities-faqs)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21832,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21829",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "High",
+      "TestImplementationCost": "High",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21866",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Monitoring",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 21808,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21955",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Devices",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24564,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21889",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Authentication",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25409",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21984",
+      "TestStatus": "Planned",
+      "TestRisk": "Low",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 25543,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24572,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25398",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25399",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35019",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Information Protection",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21985",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "25391",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21834",
+      "TestStatus": "Planned",
+      "TestRisk": "Low",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "35009",
+      "TestStatus": "Skipped",
+      "TestRisk": "Low",
+      "TestPillar": "Data",
+      "TestCategory": "Sensitivity Labels",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM2\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25379",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"AAD_PREMIUM\") OR (\"AAD_PREMIUM_P2\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21912",
+      "TestStatus": "Planned",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21849",
+      "TestStatus": "Passed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35029",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Information Protection",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM2\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21872,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25405",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 25539,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21797,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P2. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25416",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25394",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24802,
+      "TestStatus": "Skipped",
+      "TestRisk": "Low",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21790",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "35028",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Information Protection",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21840",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24560,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24547,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 27015,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24690,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24824,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Data",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25480",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21892,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "High",
+      "TestImplementationCost": "High",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21838",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21800",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Monitoring",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 25541,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21803",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35030",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Data Loss Prevention (DLP)",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24827,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Data",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21795",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Monitoring",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21992",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "35025",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Rights Management Service (RMS)",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24839,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Data",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21899",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21896",
+      "TestStatus": "Investigate",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "35032",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Data Loss Prevention (DLP)",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25415",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21882",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "35017",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Information Protection",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35026",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Microsoft Purview Message Encryption",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24548,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Data",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21964,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21850",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 27019,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35013",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Sensitivity Labels Configuration",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25420",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\") OR (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 26883,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21773",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21839",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35007",
+      "TestStatus": "Skipped",
+      "TestRisk": "Low",
+      "TestPillar": "Data",
+      "TestCategory": "SharePoint Online",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21864",
+      "TestStatus": "Planned",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 21835,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21843",
+      "TestStatus": "Planned",
+      "TestRisk": "Low",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21821",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21877",
+      "TestStatus": "Passed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "25370",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Network",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\") OR (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 26881,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21851",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "External collaboration",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21780",
+      "TestStatus": "Passed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 25533,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21788",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21783,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24576,
+      "TestStatus": "Skipped",
+      "TestRisk": "Low",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25407",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35006",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "SharePoint Online",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21879,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "External collaboration",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P2. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35003",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "sensitivity-labels",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35039",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Data Security Posture Management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "22128",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21885",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 21929,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Identity governance",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P2. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35012",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Sensitivity Labels Configuration",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM2\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21809",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "35036",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Advanced Classification",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25403",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21875,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "External collaboration",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P2. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21854",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "25400",
+      "TestStatus": "Investigate",
+      "TestRisk": "Low",
+      "TestPillar": "Network",
+      "TestCategory": "Private Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24871,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 25466,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Private Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35037",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Data Security Posture Management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25419",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\") OR (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35023",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Information Protection",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21954",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Devices",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21860",
+      "TestStatus": "Error",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Monitoring",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21858,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "External collaboration",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21802",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24546,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25396",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "23183",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 21878,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Identity governance",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P2. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35024",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Rights Management Service",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25411",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 27020,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21890",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "25393",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21881",
+      "TestStatus": "Planned",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "25401",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Application Proxy",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"AAD_PREMIUM\") OR (\"AAD_PREMIUM_P2\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25382",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\") OR (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21804",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21874",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "External collaboration",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "25481",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21844",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21810",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21842",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management, Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 26880,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 26879,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35015",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "sensitivity-labels",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21825,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24794,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21816,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P2. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "27001",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35027",
+      "TestStatus": "Skipped",
+      "TestRisk": "Low",
+      "TestPillar": "Data",
+      "TestCategory": "Information Protection",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 26885,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21865,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24542,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21812",
+      "TestStatus": "Passed",
+      "TestRisk": "Low",
+      "TestPillar": "Identity",
+      "TestCategory": "Privileged access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21807",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21953",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Devices",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25376",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Network security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\") OR (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25413",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21891",
+      "TestStatus": "Planned",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21792",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "External collaboration",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 24550,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 27016,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21859",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "35011",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Advanced Label Features",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"RMS_S_PREMIUM2\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "24570",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Hybrid infrastructure",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24541,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25372",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\") OR (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 25380,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 26888,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21836,
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21869",
+      "TestStatus": "Passed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21770",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"AAD_PREMIUM\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25383",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"AAD_PREMIUM\") OR (\"AAD_PREMIUM_P2\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25408",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25377",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "24518",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 21801,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35033",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Advanced Classification",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21867",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35022",
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Data",
+      "TestCategory": "Information Protection",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25384",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Role management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\") OR (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "27003",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24784,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "22124",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Monitoring",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21886",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Applications management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 24545,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Tenant",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21811",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21898",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21774",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 24553,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21775",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 26884,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "25381",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\") OR (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21789",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Monitoring",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "25371",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test requires one of the following licenses: (\"Entra_Premium_Private_Access\") OR (\"Entra_Premium_Internet_Access\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21772",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21793",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 26886,
+      "TestStatus": "Skipped",
+      "TestRisk": "Medium",
+      "TestPillar": "Network",
+      "TestCategory": "Azure Network Security",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is not applicable to the current environment.",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21876",
+      "TestStatus": "Planned",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 24575,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Device",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21776",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "21798",
+      "TestStatus": "Planned",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Access control",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": "27000",
+      "TestStatus": "Failed",
+      "TestRisk": "High",
+      "TestPillar": "Network",
+      "TestCategory": "Global Secure Access",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": 24840,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Devices",
+      "TestCategory": "Data",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "This test is for tenants that are licensed for Microsoft Intune. See [Microsoft Intune licensing](https://learn.microsoft.com/intune/intune-service/fundamentals/licenses)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "35034",
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Data",
+      "TestCategory": "Advanced Classification",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test requires one of the following licenses: (\"EXCHANGE_S_ENTERPRISE\").  Please ensure your tenant has the appropriate licenses to run this test.  See [Licensing & Service Plans](https://learn.microsoft.com/entra/identity/users/licensing-service-plan-reference)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21870",
+      "TestStatus": "Planned",
+      "TestRisk": "Low",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": "UnderConstruction",
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    },
+    {
+      "TestId": 21884,
+      "TestStatus": "Skipped",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "External collaboration",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "SkippedReason": "This test is for tenants that are licensed for Entra ID P1. See [Entra ID licensing](https://learn.microsoft.com/entra/fundamentals/licensing)",
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21848",
+      "TestStatus": "Failed",
+      "TestRisk": "Medium",
+      "TestPillar": "Identity",
+      "TestCategory": "Credential management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": null
+    },
+    {
+      "TestId": "21771",
+      "TestStatus": "Passed",
+      "TestRisk": "High",
+      "TestPillar": "Identity",
+      "TestCategory": "Application management",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "SkippedReason": null,
+      "TestAppliesTo": [
+        "Identity"
+      ]
+    }
+  ]
+}
