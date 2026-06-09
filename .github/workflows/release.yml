@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 jobs:
   package-and-release:
@@ -69,8 +70,87 @@ jobs:
           Compress-Archive -Path $moduleDirectory -DestinationPath $zipPath -Force
 
           "tag=$tag" >> $env:GITHUB_OUTPUT
+          "module_dir=$moduleDirectory" >> $env:GITHUB_OUTPUT
           "zip_path=$zipPath" >> $env:GITHUB_OUTPUT
           "zip_name=$(Split-Path -Path $zipPath -Leaf)" >> $env:GITHUB_OUTPUT
+
+      - name: Azure login via OIDC
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          allow-no-subscriptions: true
+          enable-AzPSSession: true
+
+      - name: Test Graph access
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          $token = az account get-access-token `
+            --resource-type ms-graph `
+            --query accessToken -o tsv
+
+          if ([string]::IsNullOrWhiteSpace($token)) {
+            throw 'Azure CLI did not return a Microsoft Graph access token.'
+          }
+
+          $headers = @{ Authorization = "Bearer $token" }
+
+          Invoke-RestMethod `
+            -Method GET `
+            -Headers $headers `
+            -Uri "https://graph.microsoft.com/v1.0/organization"
+
+      - name: Run Zero Trust assessment
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          $moduleDirectory = '${{ steps.package.outputs.module_dir }}'
+          $moduleManifest = Join-Path $moduleDirectory 'ZeroTrustAssessment.psd1'
+          if (!(Test-Path -Path $moduleManifest -PathType Leaf)) {
+            throw "Expected module manifest was not found: $moduleManifest"
+          }
+
+          Import-Module $moduleManifest -Force
+
+          $token = az account get-access-token `
+            --resource-type ms-graph `
+            --query accessToken -o tsv
+
+          if ([string]::IsNullOrWhiteSpace($token)) {
+            throw 'Azure CLI did not return a Microsoft Graph access token.'
+          }
+
+          $secureToken = ConvertTo-SecureString -String $token -AsPlainText -Force
+          if (Get-Command -Name Connect-Entra -ErrorAction SilentlyContinue) {
+            Connect-Entra -AccessToken $secureToken -NoWelcome
+          }
+          else {
+            Connect-MgGraph -AccessToken $secureToken -NoWelcome
+          }
+
+          Connect-ZtAssessment -Service Graph, Azure -TenantId '${{ vars.AZURE_TENANT_ID }}'
+          Invoke-ZtAssessment -Path "./ZeroTrustReport95" -DisableTelemetry -NoBrowser
+
+      - name: Validate Zero Trust report
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          $reportPath = Join-Path $PWD 'ZeroTrustReport95/ZeroTrustAssessmentReport.html'
+          if (!(Test-Path -Path $reportPath -PathType Leaf)) {
+            throw "Expected Zero Trust report was not produced: $reportPath"
+          }
+
+          $report = Get-Item -Path $reportPath
+          $minimumSizeBytes = 100KB
+          if ($report.Length -le $minimumSizeBytes) {
+            throw "Zero Trust report is too small: $($report.Length) bytes. Expected more than $minimumSizeBytes bytes."
+          }
+
+          Write-Host "Zero Trust report produced: $reportPath ($($report.Length) bytes)."
 
       - name: Publish GitHub Release
         shell: pwsh
