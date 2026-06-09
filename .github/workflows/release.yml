@@ -116,18 +116,67 @@ jobs:
 
           Import-Module $moduleManifest -Force
 
-          $token = az account get-access-token `
-            --resource-type ms-graph `
-            --query accessToken -o tsv
+          $idToken = Invoke-RestMethod `
+            -Method GET `
+            -Headers @{ Authorization = "bearer $env:ACTIONS_ID_TOKEN_REQUEST_TOKEN" } `
+            -Uri "$env:ACTIONS_ID_TOKEN_REQUEST_URL&audience=api://AzureADTokenExchange"
 
-          if ([string]::IsNullOrWhiteSpace($token)) {
-            throw 'Azure CLI did not return a Microsoft Graph access token.'
+          if ([string]::IsNullOrWhiteSpace($idToken.value)) {
+            throw 'GitHub Actions did not return an OIDC token.'
           }
 
-          $secureToken = ConvertTo-SecureString -String $token -AsPlainText -Force
-          Connect-MgGraph -AccessToken $secureToken -NoWelcome
+          $tokenResponse = Invoke-RestMethod `
+            -Method POST `
+            -ContentType 'application/x-www-form-urlencoded' `
+            -Uri "https://login.microsoftonline.com/${{ vars.AZURE_TENANT_ID }}/oauth2/v2.0/token" `
+            -Body @{
+              client_id             = '${{ vars.AZURE_CLIENT_ID }}'
+              scope                 = 'https://graph.microsoft.com/.default'
+              grant_type            = 'client_credentials'
+              client_assertion_type = 'urn:ietf:params:oauth:client-assertion-type:jwt-bearer'
+              client_assertion      = $idToken.value
+            }
 
-          Connect-ZtAssessment -Service Graph, Azure -TenantId '${{ vars.AZURE_TENANT_ID }}'
+          if ([string]::IsNullOrWhiteSpace($tokenResponse.access_token)) {
+            throw 'Microsoft identity platform did not return a Graph access token.'
+          }
+
+          $secureGraphToken = ConvertTo-SecureString -String $tokenResponse.access_token -AsPlainText -Force
+          Connect-MgGraph -AccessToken $secureGraphToken -NoWelcome
+
+          if (-not (Get-AzContext -ErrorAction SilentlyContinue)) {
+            Connect-AzAccount `
+              -ServicePrincipal `
+              -ApplicationId '${{ vars.AZURE_CLIENT_ID }}' `
+              -Tenant '${{ vars.AZURE_TENANT_ID }}' `
+              -FederatedToken $idToken.value `
+              -Environment AzureCloud `
+              -Scope Process `
+              -SkipContextPopulation `
+              -ErrorAction Stop | Out-Null
+          }
+
+          $ztModule = Get-Module ZeroTrustAssessment
+          $ztModule.SessionState.PSVariable.Set('ConnectedService', [string[]]@('Graph', 'Azure'))
+          $ztModule.SessionState.InvokeCommand.InvokeScript($false, {
+            function script:Test-ZtContext {
+              [CmdletBinding()]
+              [OutputType([bool])]
+              param()
+
+              if (-not (Get-MgContext)) {
+                throw 'No Microsoft Graph context found after federated token authentication.'
+              }
+
+              $null = Invoke-MgGraphRequest `
+                -Method GET `
+                -Uri 'https://graph.microsoft.com/v1.0/organization' `
+                -ErrorAction Stop
+
+              return $true
+            }
+          }, $null, @())
+
           Invoke-ZtAssessment -Path "./ZeroTrustReport95" -DisableTelemetry -NoBrowser
 
       - name: Validate Zero Trust report
