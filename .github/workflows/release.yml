@@ -16,6 +16,7 @@ permissions:
 jobs:
   package-and-release:
     runs-on: windows-latest
+    environment: tenant-audit
 
     env:
       MODULE_NAME: ZeroTrustAssessment
