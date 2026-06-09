@@ -125,12 +125,7 @@ jobs:
           }
 
           $secureToken = ConvertTo-SecureString -String $token -AsPlainText -Force
-          if (Get-Command -Name Connect-Entra -ErrorAction SilentlyContinue) {
-            Connect-Entra -AccessToken $secureToken -NoWelcome
-          }
-          else {
-            Connect-MgGraph -AccessToken $secureToken -NoWelcome
-          }
+          Connect-MgGraph -AccessToken $secureToken -NoWelcome
 
           Connect-ZtAssessment -Service Graph, Azure -TenantId '${{ vars.AZURE_TENANT_ID }}'
           Invoke-ZtAssessment -Path "./ZeroTrustReport95" -DisableTelemetry -NoBrowser
