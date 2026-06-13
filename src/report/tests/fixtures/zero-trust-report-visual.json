@@ -1,0 +1,6320 @@
+{
+  "ExecutedAt": "2026-06-02T16:06:31.3057648+02:00",
+  "TenantId": "00000000-0000-0000-0000-000000000000",
+  "TenantName": "Golden Tenant",
+  "Domain": "example.test",
+  "Account": "account@example.test",
+  "CurrentVersion": "2.4.100",
+  "LatestVersion": "2.3.0",
+  "TestResultSummary": {
+    "IdentityPassed": 22,
+    "IdentityTotal": 63,
+    "DevicesPassed": 0,
+    "DevicesTotal": 0,
+    "NetworkPassed": 0,
+    "NetworkTotal": 6,
+    "DataPassed": 0,
+    "DataTotal": 0
+  },
+  "Tests": [
+    {
+      "TestTitle": "Golden test 35014",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Label Policy Configuration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35014"
+    },
+    {
+      "TestTitle": "Golden test 21786",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21786
+    },
+    {
+      "TestTitle": "Golden test 21791",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "ExternalCollaboration"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "External collaboration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21791"
+    },
+    {
+      "TestTitle": "Golden test 26882",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 26882
+    },
+    {
+      "TestTitle": "Golden test 21823",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "External collaboration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21823"
+    },
+    {
+      "TestTitle": "Golden test 35008",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM2"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "SharePoint Online",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35008"
+    },
+    {
+      "TestTitle": "Golden test 21833",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21833"
+    },
+    {
+      "TestTitle": "Golden test 27004",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "27004"
+    },
+    {
+      "TestTitle": "Golden test 21857",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21857"
+    },
+    {
+      "TestTitle": "Golden test 21983",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21983"
+    },
+    {
+      "TestTitle": "Golden test 21819",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P2",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21819
+    },
+    {
+      "TestTitle": "Golden test 24870",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24870
+    },
+    {
+      "TestTitle": "Golden test 21837",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Devices",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21837"
+    },
+    {
+      "TestTitle": "Golden test 21841",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21841"
+    },
+    {
+      "TestTitle": "Golden test 35001",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM2"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Entra",
+      "TestRisk": "High",
+      "TestSfiPillar": "",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35001"
+    },
+    {
+      "TestTitle": "Golden test 35016",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Information Protection",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35016"
+    },
+    {
+      "TestTitle": "Golden test 35035",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Advanced Classification",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35035"
+    },
+    {
+      "TestTitle": "Golden test 21787",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21787"
+    },
+    {
+      "TestTitle": "Golden test 26887",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Azure_Firewall_Standard",
+        "Azure_Firewall_Premium"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 26887
+    },
+    {
+      "TestTitle": "Golden test 21845",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21845
+    },
+    {
+      "TestTitle": "Golden test 21895",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21895"
+    },
+    {
+      "TestTitle": "Golden test 35038",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data Security Posture Management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35038"
+    },
+    {
+      "TestTitle": "Golden test 25422",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access",
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25422"
+    },
+    {
+      "TestTitle": "Golden test 25410",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25410"
+    },
+    {
+      "TestTitle": "Golden test 24823",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24823
+    },
+    {
+      "TestTitle": "Golden test 35040",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data Security Posture Management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35040"
+    },
+    {
+      "TestTitle": "Golden test 21894",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21894"
+    },
+    {
+      "TestTitle": "Golden test 21820",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P2",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21820
+    },
+    {
+      "TestTitle": "Golden test 25406",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25406"
+    },
+    {
+      "TestTitle": "Golden test 27018",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Azure_WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 27018
+    },
+    {
+      "TestTitle": "Golden test 27017",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 27017
+    },
+    {
+      "TestTitle": "Golden test 24551",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24551
+    },
+    {
+      "TestTitle": "Golden test 24574",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24574
+    },
+    {
+      "TestTitle": "Golden test 24568",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24568
+    },
+    {
+      "TestTitle": "Golden test 35018",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Information Protection",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35018"
+    },
+    {
+      "TestTitle": "Golden test 21799",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P2",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Accelerate response and remediation",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21799
+    },
+    {
+      "TestTitle": "Golden test 21941",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21941
+    },
+    {
+      "TestTitle": "Golden test 25395",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25395"
+    },
+    {
+      "TestTitle": "Golden test 21893",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P2",
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21893"
+    },
+    {
+      "TestTitle": "Golden test 21831",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21831"
+    },
+    {
+      "TestTitle": "Golden test 25392",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Private Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25392"
+    },
+    {
+      "TestTitle": "Golden test 35041",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM2"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data Security Posture Management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35041"
+    },
+    {
+      "TestTitle": "Golden test 21814",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": [
+        "PrivilegedIdentity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21814"
+    },
+    {
+      "TestTitle": "Golden test 21813",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21813"
+    },
+    {
+      "TestTitle": "Golden test 21868",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "External collaboration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21868"
+    },
+    {
+      "TestTitle": "Golden test 21781",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Authentication"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21781"
+    },
+    {
+      "TestTitle": "Golden test 21806",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21806
+    },
+    {
+      "TestTitle": "Golden test 24561",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24561
+    },
+    {
+      "TestTitle": "Golden test 24549",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24549
+    },
+    {
+      "TestTitle": "Golden test 21784",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control; Credential management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21784
+    },
+    {
+      "TestTitle": "Golden test 21888",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21888"
+    },
+    {
+      "TestTitle": "Golden test 35004",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Sensitivity Labels",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35004"
+    },
+    {
+      "TestTitle": "Golden test 21846",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21846"
+    },
+    {
+      "TestTitle": "Golden test 25537",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Azure_Firewall_Standard",
+        "Azure_Firewall_Premium"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 25537
+    },
+    {
+      "TestTitle": "Golden test 22659",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "P2",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Monitoring",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 22659
+    },
+    {
+      "TestTitle": "Golden test 21824",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "External collaboration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21824"
+    },
+    {
+      "TestTitle": "Golden test 21777",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21777"
+    },
+    {
+      "TestTitle": "Golden test 21855",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21855"
+    },
+    {
+      "TestTitle": "Golden test 21782",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": [
+        "Credential"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21782"
+    },
+    {
+      "TestTitle": "Golden test 27002",
+      "TestPillar": "Network",
+      "SkippedReason": null,
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Entra_Premium_Internet_Access",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "27002"
+    },
+    {
+      "TestTitle": "Golden test 21862",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "P2",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Monitoring",
+      "TestRisk": "High",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21862
+    },
+    {
+      "TestTitle": "Golden test 24543",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24543
+    },
+    {
+      "TestTitle": "Golden test 21830",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21830
+    },
+    {
+      "TestTitle": "Golden test 25550",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure_Firewall_Premium",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 25550
+    },
+    {
+      "TestTitle": "Golden test 35021",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Information Protection",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35021"
+    },
+    {
+      "TestTitle": "Golden test 21847",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21847"
+    },
+    {
+      "TestTitle": "Golden test 21796",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21796
+    },
+    {
+      "TestTitle": "Golden test 24573",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24573
+    },
+    {
+      "TestTitle": "Golden test 35005",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "SharePoint Online",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35005"
+    },
+    {
+      "TestTitle": "Golden test 21815",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "P2",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21815
+    },
+    {
+      "TestTitle": "Golden test 21828",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21828
+    },
+    {
+      "TestTitle": "Golden test 21887",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21887"
+    },
+    {
+      "TestTitle": "Golden test 24569",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24569
+    },
+    {
+      "TestTitle": "Golden test 24554",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24554
+    },
+    {
+      "TestTitle": "Golden test 22072",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "22072"
+    },
+    {
+      "TestTitle": "Golden test 25375",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access",
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25375"
+    },
+    {
+      "TestTitle": "Golden test 35010",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM2"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Encryption",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35010"
+    },
+    {
+      "TestTitle": "Golden test 26889",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Azure_FrontDoor_Standard",
+        "Azure_FrontDoor_Premium"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 26889
+    },
+    {
+      "TestTitle": "Golden test 21822",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21822"
+    },
+    {
+      "TestTitle": "Golden test 24540",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24540
+    },
+    {
+      "TestTitle": "Golden test 21897",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21897"
+    },
+    {
+      "TestTitle": "Golden test 35020",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Information Protection",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35020"
+    },
+    {
+      "TestTitle": "Golden test 21883",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Workload",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Accelerate response and remediation",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21883
+    },
+    {
+      "TestTitle": "Golden test 21832",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21832
+    },
+    {
+      "TestTitle": "Golden test 21829",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "High",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21829"
+    },
+    {
+      "TestTitle": "Golden test 21866",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Monitoring",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21866"
+    },
+    {
+      "TestTitle": "Golden test 21808",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21808
+    },
+    {
+      "TestTitle": "Golden test 21955",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Devices",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21955"
+    },
+    {
+      "TestTitle": "Golden test 24564",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24564
+    },
+    {
+      "TestTitle": "Golden test 21889",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Authentication",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21889"
+    },
+    {
+      "TestTitle": "Golden test 25409",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25409"
+    },
+    {
+      "TestTitle": "Golden test 21984",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21984"
+    },
+    {
+      "TestTitle": "Golden test 25543",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Azure WAF on Azure Front Door Premium SKU",
+        "Azure Standard SKU"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 25543
+    },
+    {
+      "TestTitle": "Golden test 24572",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24572
+    },
+    {
+      "TestTitle": "Golden test 25398",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25398"
+    },
+    {
+      "TestTitle": "Golden test 25399",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25399"
+    },
+    {
+      "TestTitle": "Golden test 35019",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Information Protection",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35019"
+    },
+    {
+      "TestTitle": "Golden test 21985",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21985"
+    },
+    {
+      "TestTitle": "Golden test 25391",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25391"
+    },
+    {
+      "TestTitle": "Golden test 21834",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21834"
+    },
+    {
+      "TestTitle": "Golden test 35009",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM2"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Sensitivity Labels",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35009"
+    },
+    {
+      "TestTitle": "Golden test 25379",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "AAD_PREMIUM",
+        "AAD_PREMIUM_P2"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25379"
+    },
+    {
+      "TestTitle": "Golden test 21912",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21912"
+    },
+    {
+      "TestTitle": "Golden test 21849",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21849"
+    },
+    {
+      "TestTitle": "Golden test 35029",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM2"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Information Protection",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35029"
+    },
+    {
+      "TestTitle": "Golden test 21872",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21872
+    },
+    {
+      "TestTitle": "Golden test 25405",
+      "TestPillar": "Network",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25405"
+    },
+    {
+      "TestTitle": "Golden test 25539",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure_Firewall_Premium",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 25539
+    },
+    {
+      "TestTitle": "Golden test 21797",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P2",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Accelerate response and remediation",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21797
+    },
+    {
+      "TestTitle": "Golden test 25416",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25416"
+    },
+    {
+      "TestTitle": "Golden test 25394",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25394"
+    },
+    {
+      "TestTitle": "Golden test 24802",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect tenants and isolate production",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24802
+    },
+    {
+      "TestTitle": "Golden test 21790",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21790"
+    },
+    {
+      "TestTitle": "Golden test 35028",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Information Protection",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35028"
+    },
+    {
+      "TestTitle": "Golden test 21840",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21840"
+    },
+    {
+      "TestTitle": "Golden test 24560",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24560
+    },
+    {
+      "TestTitle": "Golden test 24547",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24547
+    },
+    {
+      "TestTitle": "Golden test 27015",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 27015
+    },
+    {
+      "TestTitle": "Golden test 24690",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24690
+    },
+    {
+      "TestTitle": "Golden test 24824",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24824
+    },
+    {
+      "TestTitle": "Golden test 25480",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25480"
+    },
+    {
+      "TestTitle": "Golden test 21892",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21892
+    },
+    {
+      "TestTitle": "Golden test 21838",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21838"
+    },
+    {
+      "TestTitle": "Golden test 21800",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Monitoring",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21800"
+    },
+    {
+      "TestTitle": "Golden test 25541",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Azure WAF",
+        "Azure Application Gateway Standard SKU"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 25541
+    },
+    {
+      "TestTitle": "Golden test 21803",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21803"
+    },
+    {
+      "TestTitle": "Golden test 35030",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data Loss Prevention (DLP)",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35030"
+    },
+    {
+      "TestTitle": "Golden test 24827",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24827
+    },
+    {
+      "TestTitle": "Golden test 21795",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Monitoring",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21795"
+    },
+    {
+      "TestTitle": "Golden test 21992",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [
+        {
+          "id": "84dfc8bf-bd29-443a-8370-9d71a5fb6a4f",
+          "displayName": "webcam",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "0a093c85-15af-4ddd-a412-b1890337cdc2",
+          "displayName": "DeploymentScript",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "3c77dce4-09ba-421c-bbb1-0b429903e54f",
+          "displayName": "DeploymentScript",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "1e2c7436-ef6e-4e12-b849-d3205d1060ae",
+          "displayName": "app-kavtpp4igyc2w",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "cd398160-3dbf-4c8f-8a85-b2d3d8490f04",
+          "displayName": "app-n67chf4j3h7eg",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "9440bcac-c94f-43aa-a938-0d8626063ddc",
+          "displayName": "crawler-identity",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "8d195bc9-e585-4307-9a56-ab916322bbab",
+          "displayName": "data-processing",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "677ebc0f-a8ff-4f10-928f-5a5ac459d48b",
+          "displayName": "id-api-jwlu4unmr4xfs",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "78adfbde-6ad1-4f35-91e7-78add3b5d0e5",
+          "displayName": "removesoft4pm",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "63a55f30-4494-4c1e-b89c-49d1719ff3a0",
+          "displayName": "stock-chat-api-test",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "8aa615cc-851c-47cf-9faf-3a20f250438a",
+          "displayName": "super-learning-api-dev",
+          "userPrincipalName": "",
+          "tags": []
+        }
+      ],
+      "TestId": "21992"
+    },
+    {
+      "TestTitle": "Golden test 35025",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Rights Management Service (RMS)",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35025"
+    },
+    {
+      "TestTitle": "Golden test 24839",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24839
+    },
+    {
+      "TestTitle": "Golden test 21899",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21899"
+    },
+    {
+      "TestTitle": "Golden test 21896",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Investigate",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21896"
+    },
+    {
+      "TestTitle": "Golden test 35032",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data Loss Prevention (DLP)",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35032"
+    },
+    {
+      "TestTitle": "Golden test 25415",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25415"
+    },
+    {
+      "TestTitle": "Golden test 21882",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21882"
+    },
+    {
+      "TestTitle": "Golden test 35017",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Information Protection",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35017"
+    },
+    {
+      "TestTitle": "Golden test 35026",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Microsoft Purview Message Encryption",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35026"
+    },
+    {
+      "TestTitle": "Golden test 24548",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24548
+    },
+    {
+      "TestTitle": "Golden test 21964",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21964
+    },
+    {
+      "TestTitle": "Golden test 21850",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21850"
+    },
+    {
+      "TestTitle": "Golden test 27019",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 27019
+    },
+    {
+      "TestTitle": "Golden test 35013",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Sensitivity Labels Configuration",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35013"
+    },
+    {
+      "TestTitle": "Golden test 25420",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access",
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25420"
+    },
+    {
+      "TestTitle": "Golden test 26883",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 26883
+    },
+    {
+      "TestTitle": "Golden test 21773",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Application"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [
+        {
+          "id": "20f8ef57-bbf2-49d7-bd60-95720061e140",
+          "displayName": "AWS IAM Identity Center (successor to AWS Single Sign-On)",
+          "userPrincipalName": "",
+          "tags": [
+            "WindowsAzureActiveDirectoryIntegratedApp"
+          ]
+        }
+      ],
+      "TestId": "21773"
+    },
+    {
+      "TestTitle": "Golden test 21839",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21839"
+    },
+    {
+      "TestTitle": "Golden test 35007",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "SharePoint Online",
+      "TestRisk": "Low",
+      "TestSfiPillar": "",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35007"
+    },
+    {
+      "TestTitle": "Golden test 21864",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21864"
+    },
+    {
+      "TestTitle": "Golden test 21835",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21835
+    },
+    {
+      "TestTitle": "Golden test 21843",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21843"
+    },
+    {
+      "TestTitle": "Golden test 21821",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21821"
+    },
+    {
+      "TestTitle": "Golden test 21877",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21877"
+    },
+    {
+      "TestTitle": "Golden test 25370",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access",
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Network",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25370"
+    },
+    {
+      "TestTitle": "Golden test 26881",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 26881
+    },
+    {
+      "TestTitle": "Golden test 21851",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Application"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "External collaboration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21851"
+    },
+    {
+      "TestTitle": "Golden test 21780",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21780"
+    },
+    {
+      "TestTitle": "Golden test 25533",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "DDoS_Network_Protection",
+        "DDoS_IP_Protection"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 25533
+    },
+    {
+      "TestTitle": "Golden test 21788",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21788"
+    },
+    {
+      "TestTitle": "Golden test 21783",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21783
+    },
+    {
+      "TestTitle": "Golden test 24576",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24576
+    },
+    {
+      "TestTitle": "Golden test 25407",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25407"
+    },
+    {
+      "TestTitle": "Golden test 35006",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "SharePoint Online",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35006"
+    },
+    {
+      "TestTitle": "Golden test 21879",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P2",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "External collaboration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21879
+    },
+    {
+      "TestTitle": "Golden test 35003",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "sensitivity-labels",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35003"
+    },
+    {
+      "TestTitle": "Golden test 35039",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data Security Posture Management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35039"
+    },
+    {
+      "TestTitle": "Golden test 22128",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "22128"
+    },
+    {
+      "TestTitle": "Golden test 21885",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21885"
+    },
+    {
+      "TestTitle": "Golden test 21929",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "P2",
+        "Governance"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Identity governance",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21929
+    },
+    {
+      "TestTitle": "Golden test 35012",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM2"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Sensitivity Labels Configuration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35012"
+    },
+    {
+      "TestTitle": "Golden test 21809",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21809"
+    },
+    {
+      "TestTitle": "Golden test 35036",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Advanced Classification",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35036"
+    },
+    {
+      "TestTitle": "Golden test 25403",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25403"
+    },
+    {
+      "TestTitle": "Golden test 21875",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "P2",
+        "Governance"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "External collaboration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21875
+    },
+    {
+      "TestTitle": "Golden test 21854",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21854"
+    },
+    {
+      "TestTitle": "Golden test 25400",
+      "TestPillar": "Network",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "AAD_PREMIUM",
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Investigate",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Private Access",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25400"
+    },
+    {
+      "TestTitle": "Golden test 24871",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24871
+    },
+    {
+      "TestTitle": "Golden test 25466",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Entra_Premium_Private_Access",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Private Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 25466
+    },
+    {
+      "TestTitle": "Golden test 35037",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data Security Posture Management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35037"
+    },
+    {
+      "TestTitle": "Golden test 25419",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access",
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25419"
+    },
+    {
+      "TestTitle": "Golden test 35023",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Information Protection",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35023"
+    },
+    {
+      "TestTitle": "Golden test 21954",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Devices",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21954"
+    },
+    {
+      "TestTitle": "Golden test 21860",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": null,
+      "TestStatus": "Error",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Monitoring",
+      "TestRisk": "High",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21860"
+    },
+    {
+      "TestTitle": "Golden test 21858",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "External collaboration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21858
+    },
+    {
+      "TestTitle": "Golden test 21802",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21802"
+    },
+    {
+      "TestTitle": "Golden test 24546",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24546
+    },
+    {
+      "TestTitle": "Golden test 25396",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25396"
+    },
+    {
+      "TestTitle": "Golden test 23183",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "23183"
+    },
+    {
+      "TestTitle": "Golden test 21878",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "P2",
+        "Governance"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Identity governance",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21878
+    },
+    {
+      "TestTitle": "Golden test 35024",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Rights Management Service",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35024"
+    },
+    {
+      "TestTitle": "Golden test 25411",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25411"
+    },
+    {
+      "TestTitle": "Golden test 27020",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 27020
+    },
+    {
+      "TestTitle": "Golden test 21890",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21890"
+    },
+    {
+      "TestTitle": "Golden test 25393",
+      "TestPillar": "Network",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "AAD_PREMIUM",
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25393"
+    },
+    {
+      "TestTitle": "Golden test 21881",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21881"
+    },
+    {
+      "TestTitle": "Golden test 25401",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "AAD_PREMIUM",
+        "AAD_PREMIUM_P2"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application Proxy",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25401"
+    },
+    {
+      "TestTitle": "Golden test 25382",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access",
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25382"
+    },
+    {
+      "TestTitle": "Golden test 21804",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21804"
+    },
+    {
+      "TestTitle": "Golden test 21874",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "External collaboration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21874"
+    },
+    {
+      "TestTitle": "Golden test 25481",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25481"
+    },
+    {
+      "TestTitle": "Golden test 21844",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21844"
+    },
+    {
+      "TestTitle": "Golden test 21810",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21810"
+    },
+    {
+      "TestTitle": "Golden test 21842",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management, Privileged access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21842"
+    },
+    {
+      "TestTitle": "Golden test 26880",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 26880
+    },
+    {
+      "TestTitle": "Golden test 26879",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 26879
+    },
+    {
+      "TestTitle": "Golden test 35015",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "sensitivity-labels",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35015"
+    },
+    {
+      "TestTitle": "Golden test 21825",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21825
+    },
+    {
+      "TestTitle": "Golden test 24794",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24794
+    },
+    {
+      "TestTitle": "Golden test 21816",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P2",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21816
+    },
+    {
+      "TestTitle": "Golden test 27001",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "27001"
+    },
+    {
+      "TestTitle": "Golden test 35027",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Information Protection",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35027"
+    },
+    {
+      "TestTitle": "Golden test 26885",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "DDoS_Network_Protection",
+        "DDoS_IP_Protection"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 26885
+    },
+    {
+      "TestTitle": "Golden test 21865",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21865
+    },
+    {
+      "TestTitle": "Golden test 24542",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24542
+    },
+    {
+      "TestTitle": "Golden test 21812",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Privileged access",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21812"
+    },
+    {
+      "TestTitle": "Golden test 21807",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Application"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21807"
+    },
+    {
+      "TestTitle": "Golden test 21953",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Devices",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21953"
+    },
+    {
+      "TestTitle": "Golden test 25376",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access",
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Network security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25376"
+    },
+    {
+      "TestTitle": "Golden test 25413",
+      "TestPillar": "Network",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": "Entra_Premium_Internet_Access",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25413"
+    },
+    {
+      "TestTitle": "Golden test 21891",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21891"
+    },
+    {
+      "TestTitle": "Golden test 21792",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Application"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "External collaboration",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21792"
+    },
+    {
+      "TestTitle": "Golden test 24550",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24550
+    },
+    {
+      "TestTitle": "Golden test 27016",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Azure WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 27016
+    },
+    {
+      "TestTitle": "Golden test 21859",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21859"
+    },
+    {
+      "TestTitle": "Golden test 35011",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "RMS_S_PREMIUM2"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Advanced Label Features",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35011"
+    },
+    {
+      "TestTitle": "Golden test 24570",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Hybrid infrastructure",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "24570"
+    },
+    {
+      "TestTitle": "Golden test 24541",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24541
+    },
+    {
+      "TestTitle": "Golden test 25372",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access",
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25372"
+    },
+    {
+      "TestTitle": "Golden test 25380",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "AAD_PREMIUM",
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 25380
+    },
+    {
+      "TestTitle": "Golden test 26888",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure_Application_Gateway_WAF",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 26888
+    },
+    {
+      "TestTitle": "Golden test 21836",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21836
+    },
+    {
+      "TestTitle": "Golden test 21869",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21869"
+    },
+    {
+      "TestTitle": "Golden test 21770",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "High",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "AAD_PREMIUM"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21770"
+    },
+    {
+      "TestTitle": "Golden test 25383",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "AAD_PREMIUM",
+        "AAD_PREMIUM_P2"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25383"
+    },
+    {
+      "TestTitle": "Golden test 25408",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25408"
+    },
+    {
+      "TestTitle": "Golden test 25377",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25377"
+    },
+    {
+      "TestTitle": "Golden test 24518",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [
+        {
+          "id": "fac55aaf-dfb0-4daa-b40b-0b4e81e81a36",
+          "displayName": "dev_vakanzen",
+          "userPrincipalName": "",
+          "tags": [
+            "WindowsAzureActiveDirectoryIntegratedApp",
+            "HideApp",
+            "singlePageApp",
+            "apiConsumer"
+          ]
+        },
+        {
+          "id": "2291a711-374b-467d-8cd1-87f42f51cbeb",
+          "displayName": "soft4pm-freelancer-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": [
+            "HideApp"
+          ]
+        },
+        {
+          "id": "f0bfb82b-daff-4588-80fa-f8a6502017a2",
+          "displayName": "Graph Explorer",
+          "userPrincipalName": "",
+          "tags": [
+            "WindowsAzureActiveDirectoryIntegratedApp"
+          ]
+        },
+        {
+          "id": "ba8e71d5-6164-4ffb-871a-3e3d3b125e70",
+          "displayName": "test",
+          "userPrincipalName": "",
+          "tags": [
+            "WindowsAzureActiveDirectoryIntegratedApp"
+          ]
+        },
+        {
+          "id": "2ab4c36d-9ec5-4cbf-b6e4-c60db5afbdf0",
+          "displayName": "aws_power",
+          "userPrincipalName": "",
+          "tags": [
+            "HideApp",
+            "WindowsAzureActiveDirectoryIntegratedApp"
+          ]
+        },
+        {
+          "id": "6b33ef4b-0f38-475e-874b-2e40e8c32e63",
+          "displayName": "soft4pm-stock-treasure-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "eececa2b-df5f-42d0-a640-fa0dfd5a6f64",
+          "displayName": "jobs",
+          "userPrincipalName": "",
+          "tags": [
+            "WindowsAzureActiveDirectoryIntegratedApp",
+            "singlePageApp",
+            "notApiConsumer",
+            "apiConsumer"
+          ]
+        }
+      ],
+      "TestId": "24518"
+    },
+    {
+      "TestTitle": "Golden test 21801",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21801
+    },
+    {
+      "TestTitle": "Golden test 35033",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Advanced Classification",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35033"
+    },
+    {
+      "TestTitle": "Golden test 21867",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": null,
+      "RelatedObjects": [
+        {
+          "id": "340cb401-80a0-4040-8fd3-24e6086484aa",
+          "displayName": "example_soft4pm_postman",
+          "userPrincipalName": "",
+          "tags": [
+            "WindowsAzureActiveDirectoryGalleryApplicationNonPrimaryV1",
+            "WindowsAzureActiveDirectoryIntegratedApp"
+          ]
+        },
+        {
+          "id": "abeee0d4-abec-46be-9034-dac0a2d54a2f",
+          "displayName": "apim",
+          "userPrincipalName": "",
+          "tags": [
+            "WindowsAzureActiveDirectoryIntegratedApp",
+            "webApp",
+            "notApiConsumer"
+          ]
+        },
+        {
+          "id": "d82a515e-af63-467c-b5ed-d81495c051d1",
+          "displayName": "soft4pm-exp_node-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        }
+      ],
+      "TestId": "21867"
+    },
+    {
+      "TestTitle": "Golden test 35022",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Information Protection",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35022"
+    },
+    {
+      "TestTitle": "Golden test 25384",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access",
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Role management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25384"
+    },
+    {
+      "TestTitle": "Golden test 27003",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "27003"
+    },
+    {
+      "TestTitle": "Golden test 24784",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24784
+    },
+    {
+      "TestTitle": "Golden test 22124",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Application"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Monitoring",
+      "TestRisk": "High",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "22124"
+    },
+    {
+      "TestTitle": "Golden test 21886",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Applications management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21886"
+    },
+    {
+      "TestTitle": "Golden test 24545",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Tenant",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24545
+    },
+    {
+      "TestTitle": "Golden test 21811",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [
+        {
+          "id": "54857edd-44d8-43bc-915f-ddafd3ddd80c",
+          "displayName": "Darek",
+          "userPrincipalName": "darek@konradsoft4pm.onmicrosoft.com",
+          "tags": []
+        },
+        {
+          "id": "258cf528-a22e-424c-a429-875f06e6fb9f",
+          "displayName": "Konrad Zawadka",
+          "userPrincipalName": "konrad_soft4pm.com#EXT#@konradsoft4pm.onmicrosoft.com",
+          "tags": []
+        },
+        {
+          "id": "711939c0-9cbf-47bb-baa0-850d8baa281f",
+          "displayName": "Konrad Zawadka",
+          "userPrincipalName": "konradzawadka_gmail.com#EXT#@konradsoft4pm.onmicrosoft.com",
+          "tags": []
+        },
+        {
+          "id": "02a136ac-2199-47ce-a4c2-a163602eb1fc",
+          "displayName": "Konrad Zawadka - Breaking Glass",
+          "userPrincipalName": "kzawadka@konradsoft4pm.onmicrosoft.com",
+          "tags": []
+        },
+        {
+          "id": "6be88ceb-16ae-4a16-b630-6c76b5805354",
+          "displayName": "mmuzylo@gmail.com",
+          "userPrincipalName": "mmuzylo_gmail.com#EXT#@konradsoft4pm.onmicrosoft.com",
+          "tags": []
+        }
+      ],
+      "TestId": "21811"
+    },
+    {
+      "TestTitle": "Golden test 21898",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "High",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21898"
+    },
+    {
+      "TestTitle": "Golden test 21774",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21774"
+    },
+    {
+      "TestTitle": "Golden test 24553",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and isolate production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24553
+    },
+    {
+      "TestTitle": "Golden test 21775",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21775"
+    },
+    {
+      "TestTitle": "Golden test 26884",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Azure_Front_Door_Premium",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 26884
+    },
+    {
+      "TestTitle": "Golden test 25381",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access",
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25381"
+    },
+    {
+      "TestTitle": "Golden test 21789",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Monitoring",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21789"
+    },
+    {
+      "TestTitle": "Golden test 25371",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "Entra_Premium_Private_Access",
+        "Entra_Premium_Internet_Access"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "25371"
+    },
+    {
+      "TestTitle": "Golden test 21772",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Application"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [
+        {
+          "id": "4a5d26a9-adb6-4ffb-b004-e2146e2f0b61",
+          "displayName": "apim",
+          "userPrincipalName": "",
+          "tags": [
+            "webApp",
+            "notApiConsumer"
+          ]
+        },
+        {
+          "id": "26c0e2f4-b9eb-4f17-9ee6-1e0dae2cb86f",
+          "displayName": "azure-cli-2020-11-02-09-10-23",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "06da5cbf-5c05-4681-9391-a5eb850cd511",
+          "displayName": "azure-cli-2020-11-18-14-20-36",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "d35a1eda-2126-4b31-9007-c8d26d744217",
+          "displayName": "cloud",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "0077eaee-9327-49e4-883c-69eccb073a87",
+          "displayName": "cluster",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "35b6b697-7032-4ba5-91e7-d048a69f2d62",
+          "displayName": "dev_vakanzen",
+          "userPrincipalName": "",
+          "tags": [
+            "singlePageApp",
+            "apiConsumer"
+          ]
+        },
+        {
+          "id": "6ffbeb7e-dfd2-4b5a-87b0-1eede1391b20",
+          "displayName": "example_soft4pm_postman",
+          "userPrincipalName": "",
+          "tags": [
+            "WindowsAzureActiveDirectoryIntegratedApp",
+            "WindowsAzureActiveDirectoryGalleryApplicationNonPrimaryV1"
+          ]
+        },
+        {
+          "id": "7ae36799-b77c-4f28-a89a-3ddde2200f12",
+          "displayName": "freelancer",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "71ddbb43-f452-4080-91b5-3375bf6bc0c4",
+          "displayName": "jobs",
+          "userPrincipalName": "",
+          "tags": [
+            "singlePageApp",
+            "apiConsumer"
+          ]
+        },
+        {
+          "id": "b23504b2-2caa-479d-9b22-7d30cc8797e0",
+          "displayName": "konrad0340-test3312-2dac5ab2-39a7-43c9-beba-56305d1b4e12",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "0973c885-64cf-4115-ab86-cc53c4f2db81",
+          "displayName": "le-gen-local-sp-20260312080201",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "7581ef77-e94b-4f75-8df0-1ec7019fff32",
+          "displayName": "my-application",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "f5bddf4a-999b-48bf-a70e-18493f638e38",
+          "displayName": "mycomp",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "9cca18ac-9bb7-4053-a0ae-f395be7688e5",
+          "displayName": "mysilverapp",
+          "userPrincipalName": "",
+          "tags": [
+            "source:ownerlens"
+          ]
+        },
+        {
+          "id": "2f3eff80-7f44-4621-8d38-c32452dfad75",
+          "displayName": "mysuperapp",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "563c491c-a778-4e13-abfc-c0322874b79c",
+          "displayName": "rpi",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "2d97d827-e247-432c-b19c-03890e10704e",
+          "displayName": "soft4pm-aws_domain_infra-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "21835930-8395-4252-a60d-a7eee7f89d2c",
+          "displayName": "soft4pm-az_maintain_ts-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "08a82b26-dea2-48cf-b413-095e4747ca4d",
+          "displayName": "soft4pm-crawler-lite-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "29a0eefc-7440-4847-873a-5868a4abb41c",
+          "displayName": "soft4pm-crawler-lite-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "3796cbb2-f9dc-4062-86cd-6fbb57eb2d98",
+          "displayName": "soft4pm-crawler-node-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "3dd14ee2-50b6-457e-91fa-178c791f1104",
+          "displayName": "soft4pm-crawler-node-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "d2d87882-3fbe-4840-8dd3-14f7d219f2fa",
+          "displayName": "soft4pm-crawler-node-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "b77b0b43-5be5-4d49-b203-33a91867e9d7",
+          "displayName": "soft4pm-crawler-node-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "1c197e07-67c7-4cb4-af8a-426bc745d9c0",
+          "displayName": "soft4pm-crawler-node-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "16f581eb-d195-43cb-a842-2db38249bd5a",
+          "displayName": "soft4pm-crawler-node-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "e22d06dc-8d95-464c-94ef-dbffd1dc4015",
+          "displayName": "soft4pm-crawler-node-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "84ff0ab5-56c5-424f-85c3-ee7b87e48b8c",
+          "displayName": "soft4pm-crawler-node-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "41196355-7f79-4e33-b62d-fb2af2960e21",
+          "displayName": "soft4pm-exp_js-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "432f325e-7304-4a2b-8495-7211131aea17",
+          "displayName": "soft4pm-exp_node-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "005ae514-4d61-4a68-8308-5d88a275416d",
+          "displayName": "soft4pm-exp_node-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "b638026f-e356-4f6d-9ec7-270606616bd8",
+          "displayName": "soft4pm-exp_node-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "451e08f6-aeb2-4044-81f5-67b00dce6ff2",
+          "displayName": "soft4pm-exp_node-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "3e9adb5d-ab83-4eca-8b1e-3d095dae8ec2",
+          "displayName": "soft4pm-exp_pipeline-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "df88dd17-ffa6-4cb1-a78a-0dbd264e61bb",
+          "displayName": "soft4pm-exp_quarkus-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "585a9af5-45ec-4290-9cc7-22301125b676",
+          "displayName": "soft4pm-freelance_frontend-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "c8b173c6-51d2-4955-9f33-949f9fa35d7e",
+          "displayName": "soft4pm-freelance_frontend_3-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "f268794d-d4d1-429d-bdb4-0783b0321776",
+          "displayName": "soft4pm-freelancer-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "f5fd26c1-9dc8-41ff-a811-5d3344826dfb",
+          "displayName": "soft4pm-node_chrome-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "58a222c2-8e32-4e26-972c-5d0831af5808",
+          "displayName": "soft4pm-quarkus-http-lambda-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "4ef8a028-6d1c-44fa-a4f9-49e0649f570c",
+          "displayName": "soft4pm-stock-treasure-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "1691931a-8f1c-451a-aa2c-bebcf0d9348a",
+          "displayName": "soft4pm-stock-treasure-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "87b64619-3538-462a-9c36-d0de56b69b27",
+          "displayName": "soft4pm-training-6fab5541-ae6a-4b06-a3d8-838e18f5118f",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "04197f67-f090-480d-8068-a8bcc878c80b",
+          "displayName": "soft4pm-training-7e7963c6-cddc-4d64-bcdd-1bfb727a05c2",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "b5625591-18fc-4d9d-ae4a-4a6ae3aadccb",
+          "displayName": "test",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "20f8ef57-bbf2-49d7-bd60-95720061e140",
+          "displayName": "AWS IAM Identity Center (successor to AWS Single Sign-On)",
+          "userPrincipalName": "",
+          "tags": [
+            "WindowsAzureActiveDirectoryIntegratedApp"
+          ]
+        },
+        {
+          "id": "4a399a23-ff10-41c5-b15c-93397cafdd13",
+          "displayName": "soft4pmkubSP-20201118151302",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "d2c40b41-27f1-44ae-8a85-5b84d716b051",
+          "displayName": "soft4pmkubSP-20201118160256",
+          "userPrincipalName": "",
+          "tags": []
+        },
+        {
+          "id": "c406d25b-958b-4eb1-9d37-2cd3cefb5f66",
+          "displayName": "testSP-20201218115119",
+          "userPrincipalName": "",
+          "tags": []
+        }
+      ],
+      "TestId": "21772"
+    },
+    {
+      "TestTitle": "Golden test 21793",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21793"
+    },
+    {
+      "TestTitle": "Golden test 26886",
+      "TestPillar": "Network",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": [
+        "DDoS_Network_Protection",
+        "DDoS_IP_Protection"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Azure Network Security",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 26886
+    },
+    {
+      "TestTitle": "Golden test 21876",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": null,
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21876"
+    },
+    {
+      "TestTitle": "Golden test 24575",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Device",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24575
+    },
+    {
+      "TestTitle": "Golden test 21776",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "High",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "Free",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21776"
+    },
+    {
+      "TestTitle": "Golden test 21798",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P2",
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Access control",
+      "TestRisk": "High",
+      "TestSfiPillar": "Monitor and detect cyberthreats",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21798"
+    },
+    {
+      "TestTitle": "Golden test 27000",
+      "TestPillar": "Network",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Entra_Premium_Internet_Access",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Global Secure Access",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "27000"
+    },
+    {
+      "TestTitle": "Golden test 24840",
+      "TestPillar": "Devices",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "Intune",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Data",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect networks",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 24840
+    },
+    {
+      "TestTitle": "Golden test 35034",
+      "TestPillar": "Data",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Medium",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": [
+        "EXCHANGE_S_ENTERPRISE"
+      ],
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Advanced Classification",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "35034"
+    },
+    {
+      "TestTitle": "Golden test 21870",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Planned",
+      "TestResult": "",
+      "TestTags": [
+        "Identity"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "Low",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21870"
+    },
+    {
+      "TestTitle": "Golden test 21884",
+      "TestPillar": "Identity",
+      "SkippedReason": "Golden skipped reason",
+      "TestImpact": "Low",
+      "TestImplementationCost": "Medium",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Skipped",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "External collaboration",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect tenants and production systems",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": 21884
+    },
+    {
+      "TestTitle": "Golden test 21848",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Failed",
+      "TestResult": "",
+      "TestTags": null,
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Credential management",
+      "TestRisk": "Medium",
+      "TestSfiPillar": "Protect identities and secrets",
+      "TestAppliesTo": null,
+      "RelatedObjects": [],
+      "TestId": "21848"
+    },
+    {
+      "TestTitle": "Golden test 21771",
+      "TestPillar": "Identity",
+      "SkippedReason": null,
+      "TestImpact": "Low",
+      "TestImplementationCost": "Low",
+      "TestMinimumLicense": "P1",
+      "TestStatus": "Passed",
+      "TestResult": "",
+      "TestTags": [
+        "Application"
+      ],
+      "TestSkipped": "",
+      "TestDescription": "",
+      "TestCategory": "Application management",
+      "TestRisk": "High",
+      "TestSfiPillar": "Protect engineering systems",
+      "TestAppliesTo": [
+        "Identity"
+      ],
+      "RelatedObjects": [],
+      "TestId": "21771"
+    }
+  ],
+  "TenantInfo": {
+    "OverviewAuthMethodsPrivilegedUsers": {
+      "description": "Golden privileged users authentication methods by phishing resistance.",
+      "nodes": [
+        {
+          "source": "Users",
+          "target": "Single factor",
+          "value": 1
+        },
+        {
+          "source": "Users",
+          "target": "Phishable",
+          "value": 3
+        },
+        {
+          "source": "Users",
+          "target": "Phish resistant",
+          "value": 2
+        },
+        {
+          "source": "Phishable",
+          "target": "Phone",
+          "value": 1
+        },
+        {
+          "source": "Phishable",
+          "target": "Authenticator",
+          "value": 2
+        },
+        {
+          "source": "Phish resistant",
+          "target": "Passkey",
+          "value": 1
+        },
+        {
+          "source": "Phish resistant",
+          "target": "WHfB",
+          "value": 1
+        },
+        {
+          "source": "Users",
+          "target": "Single factor",
+          "value": null
+        }
+      ]
+    },
+    "TenantOverview": {
+      "UserCount": 4,
+      "GuestCount": 1,
+      "GroupCount": 8,
+      "ApplicationCount": 63,
+      "DeviceCount": 1,
+      "ManagedDeviceCount": 0
+    },
+    "OverviewCaDevicesAllUsers": {
+      "description": "Golden user sign-ins split by device management and compliance.",
+      "nodes": [
+        {
+          "source": "User sign in",
+          "target": "Unmanaged",
+          "value": 4
+        },
+        {
+          "source": "User sign in",
+          "target": "Managed",
+          "value": 6
+        },
+        {
+          "source": "Unmanaged",
+          "target": "Non-compliant",
+          "value": 4
+        },
+        {
+          "source": "Managed",
+          "target": "Compliant",
+          "value": 5
+        },
+        {
+          "source": "Managed",
+          "target": "Non-compliant",
+          "value": 1
+        },
+        {
+          "source": "Unmanaged",
+          "target": "Compliant",
+          "value": 0
+        }
+      ]
+    },
+    "OverviewAuthMethodsAllUsers": {
+      "description": "Golden all users authentication methods by phishing resistance.",
+      "nodes": [
+        {
+          "source": "Users",
+          "target": "Single factor",
+          "value": 2
+        },
+        {
+          "source": "Users",
+          "target": "Phishable",
+          "value": 5
+        },
+        {
+          "source": "Users",
+          "target": "Phish resistant",
+          "value": 4
+        },
+        {
+          "source": "Phishable",
+          "target": "Phone",
+          "value": 2
+        },
+        {
+          "source": "Phishable",
+          "target": "Authenticator",
+          "value": 3
+        },
+        {
+          "source": "Phish resistant",
+          "target": "Passkey",
+          "value": 2
+        },
+        {
+          "source": "Phish resistant",
+          "target": "WHfB",
+          "value": 2
+        },
+        {
+          "source": "Users",
+          "target": "Phone",
+          "value": 0
+        }
+      ]
+    },
+    "OverviewCaMfaAllUsers": {
+      "description": "Golden user sign-ins split by Conditional Access and MFA.",
+      "nodes": [
+        {
+          "source": "User sign in",
+          "target": "No CA applied",
+          "value": 2
+        },
+        {
+          "source": "User sign in",
+          "target": "CA applied",
+          "value": 8
+        },
+        {
+          "source": "No CA applied",
+          "target": "No MFA",
+          "value": 2
+        },
+        {
+          "source": "CA applied",
+          "target": "No MFA",
+          "value": 3
+        },
+        {
+          "source": "CA applied",
+          "target": "MFA",
+          "value": 5
+        },
+        {
+          "source": "No CA applied",
+          "target": "MFA",
+          "value": null
+        }
+      ]
+    }
+  },
+  "EndOfJson": "EndOfJson",
+  "IsDemo": false
+}

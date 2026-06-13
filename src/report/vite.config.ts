@@ -3,10 +3,7 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import { viteSingleFile } from "vite-plugin-singlefile"
 
-export default defineConfig(({ command }) => {
-  const isProd = command === 'build'
-
-  return {
+export default defineConfig({
     plugins: [react(), viteSingleFile()],
     resolve: {
       alias: {
@@ -22,5 +19,4 @@ export default defineConfig(({ command }) => {
         basename: '',
       },
     },
-  }
 })

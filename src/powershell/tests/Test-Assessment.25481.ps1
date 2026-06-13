@@ -34,7 +34,7 @@ function Test-Assessment-25481 {
     Write-ZtProgress -Activity $activity -Status 'Querying all Private Access applications'
 
     # Query Q1: Single optimized query for all Private Access applications with assignments
-    $privateAccessApps = Invoke-ZtGraphRequest -RelativeUri "servicePrincipals?`$filter=tags/any(c:c eq 'IsAccessibleViaZTNAClient')&`$expand=appRoleAssignedTo&`$select=id,appId,displayName,accountEnabled,appRoleAssignmentRequired" -ApiVersion beta
+    $privateAccessApps = Invoke-ZtGraphRequest -RelativeUri "servicePrincipals?`$filter=tags/any(c:c eq 'IsAccessibleViaZTNAClient')&`$expand=appRoleAssignedTo&`$select=id,appId,displayName,accountEnabled,appRoleAssignmentRequired,tags" -ApiVersion beta
     #endregion Data Collection
 
     #region Assessment Logic
@@ -119,6 +119,7 @@ function Test-Assessment-25481 {
         Title  = 'All Private Access applications have assigned users or groups'
         Status = $passed
         Result = $testResultMarkdown
+        AffectedObjects = @($privateAccessApps)
     }
 
     # Add CustomStatus if status is 'Investigate'
