@@ -43,6 +43,7 @@ Describe "Zero Trust assessment workflow" {
         $content | Should -Match 'subscription-id:\s+\$\{\{\s*inputs\.azure_subscription_id\s*\}\}'
         $content | Should -Match 'Compress-Archive\s+-Path\s+\$reportDirectory\s+-DestinationPath\s+\$zipPath\s+-Force'
         $content | Should -Match 'az storage account list[\s\S]+zta-purpose'
+        $content | Should -Match '--query ''\[\?tags\."zta-purpose"==''''assessment-artifacts''''\]\.name \| \[0\]'''
         $content | Should -Match 'az storage blob upload[\s\S]+--auth-mode\s+login'
         $content | Should -Match 'runs/\$\{\{\s*github\.run_id\s*\}\}/\$\{\{\s*github\.run_attempt\s*\}\}/ZeroTrustReport95\.zip'
     }

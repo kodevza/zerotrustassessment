@@ -207,7 +207,7 @@ jobs:
 
           $storageAccount = az storage account list `
             --resource-group '${{ inputs.resource_group_name }}' `
-            --query "[?tags.\"zta-purpose\"=='assessment-artifacts'].name | [0]" `
+            --query '[?tags."zta-purpose"==''assessment-artifacts''].name | [0]' `
             -o tsv
 
           if ([string]::IsNullOrWhiteSpace($storageAccount)) {
