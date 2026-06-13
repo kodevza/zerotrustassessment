@@ -205,10 +205,14 @@ jobs:
           Remove-Item -Path $zipPath -Force -ErrorAction SilentlyContinue
           Compress-Archive -Path $reportDirectory -DestinationPath $zipPath -Force
 
-          $storageAccount = az storage account list `
+          $storageAccounts = az storage account list `
             --resource-group '${{ inputs.resource_group_name }}' `
-            --query '[?tags."zta-purpose"==''assessment-artifacts''].name | [0]' `
-            -o tsv
+            -o json |
+            ConvertFrom-Json
+
+          $storageAccount = $storageAccounts |
+            Where-Object { $_.tags.'zta-purpose' -eq 'assessment-artifacts' } |
+            Select-Object -First 1 -ExpandProperty name
 
           if ([string]::IsNullOrWhiteSpace($storageAccount)) {
             throw 'Assessment artifact storage account was not found in the configured resource group.'
