@@ -1,0 +1,227 @@
+name: Run Zero Trust Assessment
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: 'Module version used for the temporary assessment build'
+        required: true
+        default: '0.0.0-manual'
+        type: string
+      azure_subscription_id:
+        description: 'Azure subscription containing the assessment artifact storage account'
+        required: true
+        type: string
+      resource_group_name:
+        description: 'Resource group containing the assessment artifact storage account'
+        required: false
+        default: 'rg-zero-trust-assessment'
+        type: string
+      storage_container:
+        description: 'Private blob container used for uploaded assessment ZIP artifacts'
+        required: false
+        default: 'assessment-runs'
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  run-assessment:
+    runs-on: windows-latest
+    environment: tenant-audit
+
+    env:
+      MODULE_NAME: ZeroTrustAssessment
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Build assessment module
+        id: package
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          $releaseVersion = '${{ inputs.release_version }}'
+          if ($releaseVersion -notmatch '^\d+\.\d+\.\d+(?:-[0-9A-Za-z][0-9A-Za-z._-]*)?$') {
+            throw "release_version must match <major>.<minor>.<patch> with an optional prerelease suffix. Received: $releaseVersion"
+          }
+
+          $moduleVersion = ($releaseVersion -split '-', 2)[0]
+          $moduleName = $env:MODULE_NAME
+          $releaseDirectory = Join-Path $PWD 'build/assessment'
+          $moduleDirectory = Join-Path (Join-Path $releaseDirectory $moduleName) $moduleVersion
+
+          Remove-Item -Path $releaseDirectory -Recurse -Force -ErrorAction SilentlyContinue
+
+          & .\build\powershell\Install-CIPrerequisites.ps1
+          & .\build\powershell\Build-ReleasePSModule.ps1 `
+            -BaseDirectory $PWD `
+            -OutputDirectory $releaseDirectory `
+            -ReleaseVersion $releaseVersion
+
+          if (!(Test-Path -Path $moduleDirectory -PathType Container)) {
+            throw "Expected build output directory was not found: $moduleDirectory"
+          }
+
+          "module_dir=$moduleDirectory" >> $env:GITHUB_OUTPUT
+
+      - name: Azure login via OIDC
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ inputs.azure_subscription_id }}
+          enable-AzPSSession: true
+
+      - name: Test Graph access
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          $token = az account get-access-token `
+            --resource-type ms-graph `
+            --query accessToken -o tsv
+
+          if ([string]::IsNullOrWhiteSpace($token)) {
+            throw 'Azure CLI did not return a Microsoft Graph access token.'
+          }
+
+          $headers = @{ Authorization = "Bearer $token" }
+
+          Invoke-RestMethod `
+            -Method GET `
+            -Headers $headers `
+            -Uri "https://graph.microsoft.com/v1.0/organization"
+
+      - name: Run Zero Trust assessment
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          $moduleDirectory = '${{ steps.package.outputs.module_dir }}'
+          $moduleManifest = Join-Path $moduleDirectory 'ZeroTrustAssessment.psd1'
+          if (!(Test-Path -Path $moduleManifest -PathType Leaf)) {
+            throw "Expected module manifest was not found: $moduleManifest"
+          }
+
+          Import-Module $moduleManifest -Force
+
+          $idToken = Invoke-RestMethod `
+            -Method GET `
+            -Headers @{ Authorization = "bearer $env:ACTIONS_ID_TOKEN_REQUEST_TOKEN" } `
+            -Uri "$env:ACTIONS_ID_TOKEN_REQUEST_URL&audience=api://AzureADTokenExchange"
+
+          if ([string]::IsNullOrWhiteSpace($idToken.value)) {
+            throw 'GitHub Actions did not return an OIDC token.'
+          }
+
+          $tokenResponse = Invoke-RestMethod `
+            -Method POST `
+            -ContentType 'application/x-www-form-urlencoded' `
+            -Uri "https://login.microsoftonline.com/${{ vars.AZURE_TENANT_ID }}/oauth2/v2.0/token" `
+            -Body @{
+              client_id             = '${{ vars.AZURE_CLIENT_ID }}'
+              scope                 = 'https://graph.microsoft.com/.default'
+              grant_type            = 'client_credentials'
+              client_assertion_type = 'urn:ietf:params:oauth:client-assertion-type:jwt-bearer'
+              client_assertion      = $idToken.value
+            }
+
+          if ([string]::IsNullOrWhiteSpace($tokenResponse.access_token)) {
+            throw 'Microsoft identity platform did not return a Graph access token.'
+          }
+
+          $secureGraphToken = ConvertTo-SecureString -String $tokenResponse.access_token -AsPlainText -Force
+          Connect-MgGraph -AccessToken $secureGraphToken -NoWelcome
+
+          if (-not (Get-AzContext -ErrorAction SilentlyContinue)) {
+            Connect-AzAccount `
+              -ServicePrincipal `
+              -ApplicationId '${{ vars.AZURE_CLIENT_ID }}' `
+              -Tenant '${{ vars.AZURE_TENANT_ID }}' `
+              -FederatedToken $idToken.value `
+              -Environment AzureCloud `
+              -Scope Process `
+              -SkipContextPopulation `
+              -ErrorAction Stop | Out-Null
+          }
+
+          $ztModule = Get-Module ZeroTrustAssessment
+          $ztModule.SessionState.PSVariable.Set('ConnectedService', [string[]]@('Graph', 'Azure'))
+          $ztModule.SessionState.InvokeCommand.InvokeScript($false, {
+            function script:Test-ZtContext {
+              [CmdletBinding()]
+              [OutputType([bool])]
+              param()
+
+              if (-not (Get-MgContext)) {
+                throw 'No Microsoft Graph context found after federated token authentication.'
+              }
+
+              $null = Invoke-MgGraphRequest `
+                -Method GET `
+                -Uri 'https://graph.microsoft.com/v1.0/organization' `
+                -ErrorAction Stop
+
+              return $true
+            }
+          }, $null, @())
+
+          Invoke-ZtAssessment -Path "./ZeroTrustReport95" -DisableTelemetry -NoBrowser
+
+      - name: Validate Zero Trust report
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          $reportPath = Join-Path $PWD 'ZeroTrustReport95/ZeroTrustAssessmentReport.html'
+          if (!(Test-Path -Path $reportPath -PathType Leaf)) {
+            throw "Expected Zero Trust report was not produced: $reportPath"
+          }
+
+          $report = Get-Item -Path $reportPath
+          $minimumSizeBytes = 100KB
+          if ($report.Length -le $minimumSizeBytes) {
+            throw "Zero Trust report is too small: $($report.Length) bytes. Expected more than $minimumSizeBytes bytes."
+          }
+
+          Write-Host "Zero Trust report produced: $reportPath ($($report.Length) bytes)."
+
+      - name: Upload Zero Trust report ZIP
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          $reportDirectory = Join-Path $PWD 'ZeroTrustReport95'
+          if (!(Test-Path -Path $reportDirectory -PathType Container)) {
+            throw "Expected Zero Trust report directory was not found: $reportDirectory"
+          }
+
+          $zipPath = Join-Path $env:RUNNER_TEMP 'ZeroTrustReport95.zip'
+          Remove-Item -Path $zipPath -Force -ErrorAction SilentlyContinue
+          Compress-Archive -Path $reportDirectory -DestinationPath $zipPath -Force
+
+          $storageAccount = az storage account list `
+            --resource-group '${{ inputs.resource_group_name }}' `
+            --query "[?tags.\"zta-purpose\"=='assessment-artifacts'].name | [0]" `
+            -o tsv
+
+          if ([string]::IsNullOrWhiteSpace($storageAccount)) {
+            throw 'Assessment artifact storage account was not found in the configured resource group.'
+          }
+
+          $blobName = 'runs/${{ github.run_id }}/${{ github.run_attempt }}/ZeroTrustReport95.zip'
+
+          az storage blob upload `
+            --account-name $storageAccount `
+            --container-name '${{ inputs.storage_container }}' `
+            --name $blobName `
+            --file $zipPath `
+            --auth-mode login `
+            --overwrite true *> $null
+
+          Write-Host 'Assessment ZIP upload complete.'
